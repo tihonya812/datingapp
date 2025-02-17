@@ -4,7 +4,6 @@ import com.tihonya.datingapp.model.User;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -31,6 +30,6 @@ public class UserService {
     public List<User> getUsersByName(String name) {
         return users.stream()
                 .filter(user -> user.getName().equalsIgnoreCase(name))
-                .collect(Collectors.toList());
+                .toList();
     }
 }
