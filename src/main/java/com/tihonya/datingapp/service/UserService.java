@@ -13,10 +13,10 @@ public class UserService {
     public UserService() {
         // Добавляем несколько пользователей при инициализации
         users.add(new User(1L, "Alice", "alice@example.com"));
-        users.add(new User(2L, "Bob", "bob@example.com"));
-        users.add(new User(3L, "Charlie", "charlie@example.com"));
-        users.add(new User(4L, "Ann", "ann@example.com"));
-        users.add(new User(5L, "Ann", "ann2@example.com"));
+        users.add(new User(2L, "Kirill", "Kirill@example.com"));
+        users.add(new User(3L, "Anton", "Anton@example.com"));
+        users.add(new User(4L, "Svetlana", "Svetlana@example.com"));
+        users.add(new User(5L, "Svetlana", "svetka@example.com"));
     }
 
     // Найти пользователя по ID
