@@ -1,35 +1,81 @@
 package com.tihonya.datingapp.service;
 
+import com.tihonya.datingapp.dto.UserDto;
+import com.tihonya.datingapp.enums.Role;
+import com.tihonya.datingapp.mapper.UserMapper;
+import com.tihonya.datingapp.model.Interest;
 import com.tihonya.datingapp.model.User;
-import java.util.ArrayList;
+import com.tihonya.datingapp.repository.InterestRepository;
+import com.tihonya.datingapp.repository.UserRepository;
+import com.tihonya.datingapp.util.HashUtil;
+import jakarta.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
-    private final List<User> users = new ArrayList<>();
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
+    private final InterestRepository interestRepository;
 
-    public UserService() {
-        // Добавляем несколько пользователей при инициализации
-        users.add(new User(1L, "Alice", "alice@example.com"));
-        users.add(new User(2L, "Kirill", "Kirill@example.com"));
-        users.add(new User(3L, "Anton", "Anton@example.com"));
-        users.add(new User(4L, "Svetlana", "Svetlana@example.com"));
-        users.add(new User(5L, "Svetlana", "svetka@example.com"));
+    @Transactional
+    public List<UserDto> getAllUsers() {
+        return userMapper.toDtoList(userRepository.findAll());
     }
 
-    // Найти пользователя по ID
-    public Optional<User> getUserById(Long id) {
-        return users.stream()
-                .filter(user -> user.getId().equals(id))
-                .findFirst();
+    @Transactional
+    public UserDto getUserById(Long id) {
+        User user = userRepository.findById(id).orElseThrow(()
+                -> new RuntimeException("User not found"));
+        return userMapper.toDto(user);
     }
 
-    // Найти всех пользователей с данным именем
-    public List<User> getUsersByName(String name) {
-        return users.stream()
-                .filter(user -> user.getName().equalsIgnoreCase(name))
-                .toList();
+    @Transactional
+    public UserDto createUser(UserDto userDto) {
+        User user = new User();
+        user.setName(userDto.getName());
+        user.setEmail(userDto.getEmail());
+        user.setPassword(HashUtil.hashPassword(userDto.getPassword())); // Хешируем пароль
+        user.setRole(Role.valueOf(userDto.getRole())); // Преобразуем строку в Enum
+        return userMapper.toDto(userRepository.save(user));
+    }
+
+    @Transactional
+    public UserDto updateUser(Long id, UserDto userDto) {
+        User user = userRepository.findById(id).orElseThrow(()
+                -> new RuntimeException("User not found"));
+        user.setName(userDto.getName());
+        user.setEmail(userDto.getEmail());
+        if (userDto.getPassword() != null && !userDto.getPassword().isEmpty()) {
+            user.setPassword(HashUtil.hashPassword(userDto.getPassword()));
+            // Хешируем только если передан новый пароль
+        }
+
+        user.setRole(Role.valueOf(userDto.getRole())); // Обновляем роль
+        return userMapper.toDto(userRepository.save(user));
+    }
+
+    @Transactional
+    public void deleteUser(Long id) {
+        if (!userRepository.existsById(id)) {
+            throw new RuntimeException("User not found");
+        }
+        userRepository.deleteById(id);
+    }
+
+    @Transactional
+    public UserDto addInterestToUser(Long userId, Long interestId) {
+        User user = userRepository.findById(userId).orElseThrow(()
+                -> new RuntimeException("User not found"));
+        Interest interest = interestRepository.findById(interestId).orElseThrow(()
+                -> new RuntimeException("Interest not found"));
+
+        user.getInterests().add(interest); // Добавляем интерес пользователю
+        userRepository.save(user); // Сохраняем пользователя с новым интересом
+
+        return userMapper.toDto(user); // Возвращаем обновленного пользователя
     }
 }
+
