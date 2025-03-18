@@ -1,5 +1,6 @@
 package com.tihonya.datingapp.util;
 
+import com.tihonya.datingapp.exception.HashingException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -23,7 +24,7 @@ public class HashUtil {
             }
             return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Ошибка хеширования пароля", e);
+            throw new HashingException("Ошибка хеширования пароля", e);
         }
     }
 }
