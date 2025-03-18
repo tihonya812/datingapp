@@ -33,7 +33,7 @@ public class UserMapper {
     }
 
     public List<UserDto> toDtoList(List<User> users) {
-        return users.stream().map(this::toDto).collect(Collectors.toList());
+        return users.stream().map(this::toDto).toList();
     }
 }
 

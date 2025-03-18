@@ -1,6 +1,7 @@
 package com.tihonya.datingapp.service;
 
 import com.tihonya.datingapp.dto.ProfileDto;
+import com.tihonya.datingapp.exception.NotFoundException;
 import com.tihonya.datingapp.mapper.ProfileMapper;
 import com.tihonya.datingapp.model.Profile;
 import com.tihonya.datingapp.model.User;
@@ -14,6 +15,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class ProfileService {
+    private static final String USER_NOT_FOUND = "User not found";
+    private static final String PROFILE_NOT_FOUND = "Profile not found";
+
     private final ProfileRepository profileRepository;
     private final UserRepository userRepository;
     private final ProfileMapper profileMapper;
@@ -26,7 +30,7 @@ public class ProfileService {
     @Transactional
     public ProfileDto getProfileById(Long id) {
         Profile profile = profileRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Profile not found"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
         return profileMapper.toDto(profile);
     }
 
@@ -36,7 +40,7 @@ public class ProfileService {
         profile.setBio(profileDto.getBio());
 
         User user = userRepository.findById(profileDto.getUserId())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new NotFoundException(USER_NOT_FOUND));
         profile.setUser(user);
 
         return profileMapper.toDto(profileRepository.save(profile));
@@ -45,7 +49,7 @@ public class ProfileService {
     @Transactional
     public ProfileDto updateProfile(Long id, ProfileDto profileDto) {
         Profile profile = profileRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Profile not found"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
 
         profile.setBio(profileDto.getBio());
 
@@ -55,7 +59,7 @@ public class ProfileService {
     @Transactional
     public void deleteProfile(Long id) {
         Profile profile = profileRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Profile not found"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
 
         profileRepository.delete(profile);
     }

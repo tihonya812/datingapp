@@ -1,6 +1,7 @@
 package com.tihonya.datingapp.service;
 
 import com.tihonya.datingapp.dto.PreferenceDto;
+import com.tihonya.datingapp.exception.NotFoundException;
 import com.tihonya.datingapp.mapper.PreferenceMapper;
 import com.tihonya.datingapp.model.Preference;
 import com.tihonya.datingapp.model.Profile;
@@ -8,13 +9,15 @@ import com.tihonya.datingapp.repository.PreferenceRepository;
 import com.tihonya.datingapp.repository.ProfileRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class PreferenceService {
+    private static final String PROFILE_NOT_FOUND = "Profile not found";
+    private static final String PREFERENCE_NOT_FOUND = "Preference not found";
+
     private final PreferenceRepository preferenceRepository;
     private final ProfileRepository profileRepository;
     private final PreferenceMapper preferenceMapper;
@@ -24,7 +27,7 @@ public class PreferenceService {
         Preference preference = preferenceMapper.toEntity(preferenceDto);
 
         Profile profile = profileRepository.findById(preferenceDto.getProfileId())
-                .orElseThrow(() -> new RuntimeException("Profile not found"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
 
         preference.setProfile(profile);
         return preferenceMapper.toDto(preferenceRepository.save(preference));
@@ -34,19 +37,19 @@ public class PreferenceService {
         return preferenceRepository.findAll()
                 .stream()
                 .map(preferenceMapper::toDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public PreferenceDto getPreferenceById(Long id) {
         Preference preference = preferenceRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Preference not found"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
         return preferenceMapper.toDto(preference);
     }
 
     @Transactional
     public PreferenceDto updatePreference(Long id, PreferenceDto preferenceDto) {
         Preference preference = preferenceRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Preference not found"));
+                .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
 
         preference.setCategory(preferenceDto.getCategory());
         preference.setValue(preferenceDto.getValue());
@@ -57,7 +60,7 @@ public class PreferenceService {
     @Transactional
     public void deletePreference(Long id) {
         Preference preference = preferenceRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Preference not found"));
+                .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
 
         preferenceRepository.delete(preference);
     }

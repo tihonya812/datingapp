@@ -32,7 +32,7 @@ public class ProfileMapper {
     }
 
     public List<ProfileDto> toDtoList(List<Profile> profiles) {
-        return profiles.stream().map(this::toDto).collect(Collectors.toList());
+        return profiles.stream().map(this::toDto).toList();
     }
 }
 
