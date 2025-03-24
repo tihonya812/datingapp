@@ -59,5 +59,4 @@ public class User {
 //            joinColumns = @JoinColumn(name = "liker_id"),
 //            inverseJoinColumns = @JoinColumn(name = "liked_id")
 //    )
-//    private List<User> likedUsers = new ArrayList<>();
 
