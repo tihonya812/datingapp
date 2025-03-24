@@ -15,9 +15,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -54,13 +52,12 @@ public class User {
     )
 
     private List<Interest> interests = new ArrayList<>();
-
-    @ManyToMany
-    @JoinTable(
-            name = "user_likes",
-            joinColumns = @JoinColumn(name = "liker_id"),
-            inverseJoinColumns = @JoinColumn(name = "liked_id")
-    )
-    private Set<User> likedUsers = new HashSet<>();
 }
+//    @ManyToMany
+//    @JoinTable(
+//            name = "user_likes",
+//            joinColumns = @JoinColumn(name = "liker_id"),
+//            inverseJoinColumns = @JoinColumn(name = "liked_id")
+//    )
+//    private List<User> likedUsers = new ArrayList<>();
 

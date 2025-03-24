@@ -42,7 +42,7 @@ public class PreferenceService {
 
     public PreferenceDto getPreferenceById(Long id) {
         Preference preference = preferenceRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
+                .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
         return preferenceMapper.toDto(preference);
     }
 

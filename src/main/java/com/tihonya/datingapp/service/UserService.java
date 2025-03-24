@@ -32,7 +32,7 @@ public class UserService {
     @Transactional
     public UserDto getUserById(Long id) {
         User user = userRepository.findById(id).orElseThrow(()
-                -> new RuntimeException(USER_NOT_FOUND));
+                -> new NotFoundException(USER_NOT_FOUND));
         return userMapper.toDto(user);
     }
 
@@ -49,7 +49,7 @@ public class UserService {
     @Transactional
     public UserDto updateUser(Long id, UserDto userDto) {
         User user = userRepository.findById(id).orElseThrow(()
-                -> new RuntimeException(USER_NOT_FOUND));
+                -> new NotFoundException(USER_NOT_FOUND));
         user.setName(userDto.getName());
         user.setEmail(userDto.getEmail());
         if (userDto.getPassword() != null && !userDto.getPassword().isEmpty()) {

@@ -37,6 +37,9 @@ public class ProfileService {
     @Transactional
     public ProfileDto createProfile(ProfileDto profileDto) {
         Profile profile = new Profile();
+        profile.setName(profileDto.getName());
+        profile.setAge(profileDto.getAge());
+        profile.setCity(profileDto.getCity());
         profile.setBio(profileDto.getBio());
 
         User user = userRepository.findById(profileDto.getUserId())
@@ -51,6 +54,9 @@ public class ProfileService {
         Profile profile = profileRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
 
+        profile.setName(profileDto.getName());
+        profile.setAge(profileDto.getAge());
+        profile.setCity(profileDto.getCity());
         profile.setBio(profileDto.getBio());
 
         return profileMapper.toDto(profileRepository.save(profile));
