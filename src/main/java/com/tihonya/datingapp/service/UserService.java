@@ -41,18 +41,14 @@ public class UserService {
 
     @Transactional
     public UserDto getUserById(Long id) {
-        /*
-        User user = userRepository.findById(id).orElseThrow(()
-                -> new NotFoundException(USER_NOT_FOUND));
-        return userMapper.toDto(user);
-         */
         String cacheKey = "user_" + id;
         UserDto cachedUser = cacheService.getFromCache(cacheKey, UserDto.class);
         if (cachedUser != null) {
             return cachedUser;
         }
 
-        User user = userRepository.findById(id).orElseThrow(() -> new NotFoundException("User not found"));
+        User user = userRepository.findById(id).orElseThrow(()
+                -> new NotFoundException(USER_NOT_FOUND));
         UserDto userDto = userMapper.toDto(user);
         cacheService.saveToCache(cacheKey, userDto);
         return userDto;

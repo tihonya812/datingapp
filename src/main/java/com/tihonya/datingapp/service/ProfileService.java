@@ -48,9 +48,6 @@ public class ProfileService {
 
     @Transactional
     public ProfileDto getProfileById(Long id) {
-        //        Profile profile = profileRepository.findById(id)
-        //                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
-        //        return profileMapper.toDto(profile);
         String cacheKey = "profile_" + id;
 
         // Проверяем, есть ли профиль в кэше
@@ -109,34 +106,5 @@ public class ProfileService {
         clearProfileCache();    // Очистка всего кэша профилей (так как один удалён)
         clearProfileCache(id);  // Очистка конкретного кэша профиля (перестраховка)
     }
-    /*
-        @Transactional
-    public List<ProfileDto> getMatches(Long profileId) {
-        Profile profile = profileRepository.findById(profileId)
-                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
-        List<Profile> matches = profileRepository.findMatches(profile);
-        return profileMapper.toDtoList(matches);
-    }
-
-    @Transactional
-    public void likeProfile(Long likerId, Long likedId) {
-        if (likerId.equals(likedId)) {
-            throw new IllegalArgumentException("Нельзя лайкать свой профиль!");
-        }
-
-        Profile liker = profileRepository.findById(likerId)
-                .orElseThrow(() -> new NotFoundException("Профиль не найден"));
-
-        Profile liked = profileRepository.findById(likedId)
-                .orElseThrow(() -> new NotFoundException("Профиль не найден"));
-
-        if (!liker.getLikedProfiles().contains(liked)) {
-            liker.getLikedProfiles().add(liked);
-            profileRepository.save(liker);
-        } else {
-            throw new IllegalArgumentException("Лайк уже был поставлен!");
-        }
-    }
-     */
 }
 

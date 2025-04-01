@@ -41,12 +41,6 @@ public class PhotoService {
     }
 
     public List<PhotoDto> getPhotosByProfile(Long profileId) {
-        //        if (!profileRepository.existsById(profileId)) {
-        //            throw new NotFoundException("Профиль с ID " + profileId + " не найден");
-        //        }
-        //
-        //        List<Photo> photos = photoRepository.findByProfileId(profileId);
-        //        return photos.stream().map(photoMapper::toDto).toList();
         String cacheKey = "photos_profile_" + profileId;
         List<PhotoDto> cachedPhotos = cacheService.getFromCache(cacheKey, List.class);
         if (cachedPhotos != null) {
@@ -68,11 +62,6 @@ public class PhotoService {
     }
 
     public void deletePhoto(Long photoId) {
-        //        if (!photoRepository.existsById(photoId)) {
-        //            throw new NotFoundException("Фото с ID " + photoId + " не найдено");
-        //        }
-        //        photoRepository.deleteById(photoId);
-
         Photo photo = photoRepository.findById(photoId)
                     .orElseThrow(() -> new NotFoundException("Фото с ID " + photoId + " не найдено"));
         Long profileId = photo.getProfile().getId();

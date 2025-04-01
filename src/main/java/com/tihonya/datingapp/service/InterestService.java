@@ -42,9 +42,6 @@ public class InterestService {
 
     // Получение всех интересов
     public List<InterestDto> getAllInterests() {
-        //        return interestRepository.findAll().stream()
-        //                .map(interestMapper::toDto)
-        //                .toList();
         List<InterestDto> cachedInterests = cacheService.getFromCache(CACHE_KEY_INTERESTS, List.class);
         if (cachedInterests != null) {
             return cachedInterests;
@@ -59,9 +56,6 @@ public class InterestService {
 
     // Получение интереса по ID
     public InterestDto getInterestById(Long id) {
-        //        Interest interest = interestRepository.findById(id).orElseThrow(()
-        //                -> new NotFoundException(INTEREST_NOT_FOUND));
-        //        return interestMapper.toDto(interest);
         String cacheKey = "interest_" + id;
         InterestDto cachedInterest = cacheService.getFromCache(cacheKey, InterestDto.class);
         if (cachedInterest != null) {
@@ -69,7 +63,7 @@ public class InterestService {
         }
 
         Interest interest = interestRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Interest not found"));
+                .orElseThrow(() -> new NotFoundException(INTEREST_NOT_FOUND));
         InterestDto interestDto = interestMapper.toDto(interest);
         cacheService.saveToCache(cacheKey, interestDto);
         return interestDto;

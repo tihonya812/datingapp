@@ -11,7 +11,7 @@ import lombok.ToString;
 public class CacheEntry {
     private final Object value;
     private final Instant timestamp = Instant.now();
-    private static final long CACHE_TTL_MS = 3 * 60 * 1000; // 3 минуты
+    private static final long CACHE_TTL_MS = 3L * 60 * 1000; // 3 минуты
 
     public boolean isExpired() {
         return Instant.now().toEpochMilli() -

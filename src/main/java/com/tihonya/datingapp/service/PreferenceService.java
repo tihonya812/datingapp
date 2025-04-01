@@ -37,10 +37,6 @@ public class PreferenceService {
     }
 
     public List<PreferenceDto> getAllPreferences() {
-        //        return preferenceRepository.findAll()
-        //                .stream()
-        //                .map(preferenceMapper::toDto)
-        //                .toList();
         List<PreferenceDto> cachedPreferences = cacheService.getFromCache(CACHE_KEY_PREFERENCES, List.class);
         if (cachedPreferences != null) {
             return cachedPreferences;
@@ -55,9 +51,6 @@ public class PreferenceService {
     }
 
     public PreferenceDto getPreferenceById(Long id) {
-        //        Preference preference = preferenceRepository.findById(id)
-        //                .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
-        //        return preferenceMapper.toDto(preference);
         String cacheKey = "preference_" + id;
         PreferenceDto cachedPreference = cacheService.getFromCache(cacheKey, PreferenceDto.class);
         if (cachedPreference != null) {
@@ -65,7 +58,7 @@ public class PreferenceService {
         }
 
         Preference preference = preferenceRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Preference not found"));
+                .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
         PreferenceDto preferenceDto = preferenceMapper.toDto(preference);
         cacheService.saveToCache(cacheKey, preferenceDto);
         return preferenceDto;

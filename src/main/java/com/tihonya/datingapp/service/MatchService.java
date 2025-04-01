@@ -20,10 +20,12 @@ public class MatchService {
     private final LikeRepository likeRepository;
     private final ProfileMapper profileMapper;
     private final CacheService cacheService;
+    private static final String PROFILE_NOT_FOUND = "Profile not found";
+    private static final String MATCHES = "matches_";
 
     @Transactional
     public List<ProfileDto> getMatches(Long profileId, int minAge, int maxAge) {
-        String cacheKey = "matches_" + profileId + "_" + minAge + "_" + maxAge;
+        String cacheKey = MATCHES + profileId + "_" + minAge + "_" + maxAge;
 
         // Проверяем кэш
         List<ProfileDto> cachedMatches = cacheService.getFromCache(cacheKey, List.class);
@@ -33,7 +35,7 @@ public class MatchService {
 
         // Запрос в БД
         Profile profile = profileRepository.findById(profileId)
-                .orElseThrow(() -> new NotFoundException("Профиль не найден"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
 
         List<Profile> matches = likeRepository.findMatchesByAge(profile, minAge, maxAge);
         List<ProfileDto> matchDtos = matches.stream()
@@ -52,9 +54,9 @@ public class MatchService {
         }
 
         Profile liker = profileRepository.findById(likerId)
-                .orElseThrow(() -> new NotFoundException("Профиль не найден"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
         Profile liked = profileRepository.findById(likedId)
-                .orElseThrow(() -> new NotFoundException("Профиль не найден"));
+                .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
 
         // Проверяем, был ли лайк
         if (likeRepository.findLike(liker, liked).isPresent()) {
@@ -65,7 +67,7 @@ public class MatchService {
         likeRepository.save(new Like(null, liker, liked, Instant.now()));
 
         // Чистим кэш
-        cacheService.clearCache("matches_" + likerId);
-        cacheService.clearCache("matches_" + likedId);
+        cacheService.clearCache(MATCHES + likerId);
+        cacheService.clearCache(MATCHES + likedId);
     }
 }
