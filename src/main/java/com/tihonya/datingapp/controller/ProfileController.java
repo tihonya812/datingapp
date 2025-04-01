@@ -57,27 +57,9 @@ public class ProfileController {
         return ResponseEntity.ok(matchService.getMatches(profileId, minAge, maxAge));
     }
 
-
-
-
-    //    @GetMapping("/{profileId}/matches")
-    //    public ResponseEntity<List<ProfileDto>> getMatches(@PathVariable Long profileId) {
-    //        return ResponseEntity.ok(matchService.getMatches(profileId));
-    //    }
-
     @PostMapping("/{likerId}/like/{likedId}")
     public ResponseEntity<String> likeProfile(@PathVariable Long likerId, @PathVariable Long likedId) {
         matchService.likeProfile(likerId, likedId);
         return ResponseEntity.ok("Лайк поставлен!");
     }
-    //    @GetMapping("/{profileId}/matches")
-    //    public ResponseEntity<List<ProfileDto>> getMatches(@PathVariable Long profileId) {
-    //        return ResponseEntity.ok(matchService.getMatches(profileId));
-    //    }
-    //
-    //    @PostMapping("/{likerId}/like/{likedId}")
-    //    public ResponseEntity<String> likeProfile(@PathVariable Long likerId, @PathVariable Long likedId) {
-    //        matchService.likeProfile(likerId, likedId);
-    //        return ResponseEntity.ok("Лайк поставлен!");
-    //    }
 }
