@@ -5,4 +5,3 @@ public class HashingException extends RuntimeException {
         super(message, cause);
     }
 }
-

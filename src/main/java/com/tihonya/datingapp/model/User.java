@@ -41,7 +41,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, optional = true)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Profile profile;
 
     @ManyToMany
@@ -53,10 +53,3 @@ public class User {
 
     private List<Interest> interests = new ArrayList<>();
 }
-//    @ManyToMany
-//    @JoinTable(
-//            name = "user_likes",
-//            joinColumns = @JoinColumn(name = "liker_id"),
-//            inverseJoinColumns = @JoinColumn(name = "liked_id")
-//    )
-

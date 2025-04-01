@@ -15,16 +15,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class InterestService {
     private static final String INTEREST_NOT_FOUND = "Interest not found";
+    private static final String CACHE_KEY_INTERESTS = "all_interests";
 
     private final InterestRepository interestRepository;
     private final InterestMapper interestMapper;
     private final UserRepository userRepository;
+    private final CacheService cacheService;
 
     public InterestService(InterestRepository interestRepository,
-                           InterestMapper interestMapper, UserRepository userRepository) {
+                           InterestMapper interestMapper, UserRepository userRepository,
+                           CacheService cacheService) {
         this.interestRepository = interestRepository;
         this.interestMapper = interestMapper;
         this.userRepository = userRepository;
+        this.cacheService = cacheService;
     }
 
     // Создание интереса
@@ -32,21 +36,47 @@ public class InterestService {
         Interest interest = new Interest();
         interest.setName(interestDto.getName());
         interestRepository.save(interest);
+        clearInterestCache();
         return interestMapper.toDto(interest);
     }
 
     // Получение всех интересов
     public List<InterestDto> getAllInterests() {
-        return interestRepository.findAll().stream()
+        //        return interestRepository.findAll().stream()
+        //                .map(interestMapper::toDto)
+        //                .toList();
+        List<InterestDto> cachedInterests = cacheService.getFromCache(CACHE_KEY_INTERESTS, List.class);
+        if (cachedInterests != null) {
+            return cachedInterests;
+        }
+
+        List<InterestDto> interests = interestRepository.findAll().stream()
                 .map(interestMapper::toDto)
                 .toList();
+        cacheService.saveToCache(CACHE_KEY_INTERESTS, interests);
+        return interests;
     }
 
     // Получение интереса по ID
     public InterestDto getInterestById(Long id) {
-        Interest interest = interestRepository.findById(id).orElseThrow(()
-                -> new NotFoundException(INTEREST_NOT_FOUND));
-        return interestMapper.toDto(interest);
+        //        Interest interest = interestRepository.findById(id).orElseThrow(()
+        //                -> new NotFoundException(INTEREST_NOT_FOUND));
+        //        return interestMapper.toDto(interest);
+        String cacheKey = "interest_" + id;
+        InterestDto cachedInterest = cacheService.getFromCache(cacheKey, InterestDto.class);
+        if (cachedInterest != null) {
+            return cachedInterest;
+        }
+
+        Interest interest = interestRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Interest not found"));
+        InterestDto interestDto = interestMapper.toDto(interest);
+        cacheService.saveToCache(cacheKey, interestDto);
+        return interestDto;
+    }
+
+    public void clearInterestCache() {
+        cacheService.clearCache(CACHE_KEY_INTERESTS);
     }
 
     // Обновление интереса
@@ -55,6 +85,7 @@ public class InterestService {
                 -> new NotFoundException(INTEREST_NOT_FOUND));
         interest.setName(interestDto.getName());
         interestRepository.save(interest);
+        clearInterestCache();
         return interestMapper.toDto(interest);
     }
 
@@ -68,6 +99,7 @@ public class InterestService {
         }
         userRepository.saveAll(interest.getUsers()); // Сохраняем изменения у пользователей
         interestRepository.delete(interest);
+        clearInterestCache();
     }
 }
 

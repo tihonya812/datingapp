@@ -19,21 +19,47 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private static final String INTEREST_NOT_FOUND = "Interest not found";
     private static final String USER_NOT_FOUND = "User not found";
+    private static final String CACHE_KEY_USERS = "all_users";
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final InterestRepository interestRepository;
+    private final CacheService cacheService;
 
     @Transactional
     public List<UserDto> getAllUsers() {
-        return userMapper.toDtoList(userRepository.findAll());
+        // return userMapper.toDtoList(userRepository.findAll());
+        List<UserDto> cachedUsers = cacheService.getFromCache(CACHE_KEY_USERS, List.class);
+        if (cachedUsers != null) {
+            return cachedUsers;
+        }
+
+        List<UserDto> users = userMapper.toDtoList(userRepository.findAll());
+        cacheService.saveToCache(CACHE_KEY_USERS, users);
+        return users;
     }
 
     @Transactional
     public UserDto getUserById(Long id) {
+        /*
         User user = userRepository.findById(id).orElseThrow(()
                 -> new NotFoundException(USER_NOT_FOUND));
         return userMapper.toDto(user);
+         */
+        String cacheKey = "user_" + id;
+        UserDto cachedUser = cacheService.getFromCache(cacheKey, UserDto.class);
+        if (cachedUser != null) {
+            return cachedUser;
+        }
+
+        User user = userRepository.findById(id).orElseThrow(() -> new NotFoundException("User not found"));
+        UserDto userDto = userMapper.toDto(user);
+        cacheService.saveToCache(cacheKey, userDto);
+        return userDto;
+    }
+
+    public void clearUserCache() {
+        cacheService.clearCache(CACHE_KEY_USERS);
     }
 
     @Transactional
@@ -43,6 +69,7 @@ public class UserService {
         user.setEmail(userDto.getEmail());
         user.setPassword(HashUtil.hashPassword(userDto.getPassword())); // Хешируем пароль
         user.setRole(Role.valueOf(userDto.getRole())); // Преобразуем строку в Enum
+        clearUserCache();
         return userMapper.toDto(userRepository.save(user));
     }
 
@@ -58,6 +85,7 @@ public class UserService {
         }
 
         user.setRole(Role.valueOf(userDto.getRole())); // Обновляем роль
+        clearUserCache();
         return userMapper.toDto(userRepository.save(user));
     }
 
@@ -67,6 +95,7 @@ public class UserService {
             throw new NotFoundException(USER_NOT_FOUND);
         }
         userRepository.deleteById(id);
+        clearUserCache();
     }
 
     @Transactional
@@ -79,6 +108,7 @@ public class UserService {
         user.getInterests().add(interest); // Добавляем интерес пользователю
         userRepository.save(user); // Сохраняем пользователя с новым интересом
 
+        clearUserCache();
         return userMapper.toDto(user); // Возвращаем обновленного пользователя
     }
 }

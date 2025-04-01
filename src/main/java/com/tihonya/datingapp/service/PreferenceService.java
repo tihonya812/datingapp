@@ -17,10 +17,12 @@ import org.springframework.stereotype.Service;
 public class PreferenceService {
     private static final String PROFILE_NOT_FOUND = "Profile not found";
     private static final String PREFERENCE_NOT_FOUND = "Preference not found";
+    private static final String CACHE_KEY_PREFERENCES = "all_preferences";
 
     private final PreferenceRepository preferenceRepository;
     private final ProfileRepository profileRepository;
     private final PreferenceMapper preferenceMapper;
+    private final CacheService cacheService;
 
     @Transactional
     public PreferenceDto createPreference(PreferenceDto preferenceDto) {
@@ -30,20 +32,51 @@ public class PreferenceService {
                 .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
 
         preference.setProfile(profile);
+        clearPreferenceCache();
         return preferenceMapper.toDto(preferenceRepository.save(preference));
     }
 
     public List<PreferenceDto> getAllPreferences() {
-        return preferenceRepository.findAll()
+        //        return preferenceRepository.findAll()
+        //                .stream()
+        //                .map(preferenceMapper::toDto)
+        //                .toList();
+        List<PreferenceDto> cachedPreferences = cacheService.getFromCache(CACHE_KEY_PREFERENCES, List.class);
+        if (cachedPreferences != null) {
+            return cachedPreferences;
+        }
+
+        List<PreferenceDto> preferences = preferenceRepository.findAll()
                 .stream()
                 .map(preferenceMapper::toDto)
                 .toList();
+        cacheService.saveToCache(CACHE_KEY_PREFERENCES, preferences);
+        return preferences;
     }
 
     public PreferenceDto getPreferenceById(Long id) {
+        //        Preference preference = preferenceRepository.findById(id)
+        //                .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
+        //        return preferenceMapper.toDto(preference);
+        String cacheKey = "preference_" + id;
+        PreferenceDto cachedPreference = cacheService.getFromCache(cacheKey, PreferenceDto.class);
+        if (cachedPreference != null) {
+            return cachedPreference;
+        }
+
         Preference preference = preferenceRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
-        return preferenceMapper.toDto(preference);
+                .orElseThrow(() -> new NotFoundException("Preference not found"));
+        PreferenceDto preferenceDto = preferenceMapper.toDto(preference);
+        cacheService.saveToCache(cacheKey, preferenceDto);
+        return preferenceDto;
+    }
+
+    public void clearPreferenceCache(Long id) {
+        cacheService.clearCache("preference_" + id);
+    }
+
+    public void clearPreferenceCache() {
+        cacheService.clearCache(CACHE_KEY_PREFERENCES);
     }
 
     @Transactional
@@ -54,6 +87,7 @@ public class PreferenceService {
         preference.setCategory(preferenceDto.getCategory());
         preference.setValue(preferenceDto.getValue());
 
+        clearPreferenceCache(id);
         return preferenceMapper.toDto(preferenceRepository.save(preference));
     }
 
@@ -63,6 +97,8 @@ public class PreferenceService {
                 .orElseThrow(() -> new NotFoundException(PREFERENCE_NOT_FOUND));
 
         preferenceRepository.delete(preference);
+        clearPreferenceCache();
+        clearPreferenceCache(id);
     }
 }
 
