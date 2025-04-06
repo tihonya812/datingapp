@@ -67,7 +67,7 @@ public class MatchService {
         likeRepository.save(new Like(null, liker, liked, Instant.now()));
 
         // Чистим кэш
-        cacheService.clearCache(MATCHES + likerId);
-        cacheService.clearCache(MATCHES + likedId);
+        cacheService.clearMatchesCache(likerId);
+        cacheService.clearMatchesCache(likedId);
     }
 }

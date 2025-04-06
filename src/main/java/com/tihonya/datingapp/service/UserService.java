@@ -28,14 +28,7 @@ public class UserService {
 
     @Transactional
     public List<UserDto> getAllUsers() {
-        List<UserDto> cachedUsers = cacheService.getFromCache(CACHE_KEY_USERS, List.class);
-        if (cachedUsers != null) {
-            return cachedUsers;
-        }
-
-        List<UserDto> users = userMapper.toDtoList(userRepository.findAll());
-        cacheService.saveToCache(CACHE_KEY_USERS, users);
-        return users;
+        return userMapper.toDtoList(userRepository.findAll());
     }
 
     @Transactional

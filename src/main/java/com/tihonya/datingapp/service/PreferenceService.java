@@ -37,17 +37,10 @@ public class PreferenceService {
     }
 
     public List<PreferenceDto> getAllPreferences() {
-        List<PreferenceDto> cachedPreferences = cacheService.getFromCache(CACHE_KEY_PREFERENCES, List.class);
-        if (cachedPreferences != null) {
-            return cachedPreferences;
-        }
-
-        List<PreferenceDto> preferences = preferenceRepository.findAll()
+        return preferenceRepository.findAll()
                 .stream()
                 .map(preferenceMapper::toDto)
                 .toList();
-        cacheService.saveToCache(CACHE_KEY_PREFERENCES, preferences);
-        return preferences;
     }
 
     public PreferenceDto getPreferenceById(Long id) {

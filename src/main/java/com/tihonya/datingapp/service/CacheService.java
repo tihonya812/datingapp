@@ -16,7 +16,8 @@ public class CacheService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CacheService.class);
 
     private static final int MAX_CACHE_SIZE = 100; // Максимальный размер кэша
-    private static final long CLEANUP_INTERVAL_MS = 2L * 60 * 1000; // Интервал очистки (2 минуты)
+    private static final long CLEANUP_INTERVAL_MS = 2L * 60 * 1000; // Ин
+    // тервал очистки (2 минуты)
 
     private final ConcurrentHashMap<String, CacheEntry> cache = new ConcurrentHashMap<>();
 
@@ -41,6 +42,12 @@ public class CacheService {
         cache.remove(key);
         LOGGER.info("❌ Кэш не найден или устарел для ключа: {}", key);
         return null;
+    }
+
+    public void clearMatchesCache(Long profileId) {
+        String prefix = "matches_" + profileId;
+        cache.keySet().removeIf(key -> key.startsWith(prefix));
+        LOGGER.info("🗑️ Очищены все мэтчи для профиля {}", profileId);
     }
 
     public void clearCache(String key) {

@@ -26,16 +26,7 @@ public class ProfileService {
 
     @Transactional
     public List<ProfileDto> getAllProfiles() {
-        List<ProfileDto> cahedProfiles = cacheService.getFromCache(CACHE_KEY_PROFILES, List.class);
-        if (cahedProfiles != null) {
-            return cahedProfiles;
-        }
-
-        List<ProfileDto> profiles = profileMapper.toDtoList(profileRepository.findAll());
-
-        cacheService.saveToCache(CACHE_KEY_PROFILES, profiles);
-
-        return profiles;
+        return profileMapper.toDtoList(profileRepository.findAll());
     }
 
     public void clearProfileCache() {

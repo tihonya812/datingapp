@@ -42,16 +42,9 @@ public class InterestService {
 
     // Получение всех интересов
     public List<InterestDto> getAllInterests() {
-        List<InterestDto> cachedInterests = cacheService.getFromCache(CACHE_KEY_INTERESTS, List.class);
-        if (cachedInterests != null) {
-            return cachedInterests;
-        }
-
-        List<InterestDto> interests = interestRepository.findAll().stream()
+        return interestRepository.findAll().stream()
                 .map(interestMapper::toDto)
                 .toList();
-        cacheService.saveToCache(CACHE_KEY_INTERESTS, interests);
-        return interests;
     }
 
     // Получение интереса по ID
