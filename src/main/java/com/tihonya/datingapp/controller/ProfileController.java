@@ -3,6 +3,7 @@ package com.tihonya.datingapp.controller;
 import com.tihonya.datingapp.dto.ProfileDto;
 import com.tihonya.datingapp.service.MatchService;
 import com.tihonya.datingapp.service.ProfileService;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -34,12 +35,12 @@ public class ProfileController {
     }
 
     @PostMapping
-    public ProfileDto createProfile(@RequestBody ProfileDto profileDto) {
+    public ProfileDto createProfile(@Valid @RequestBody ProfileDto profileDto) {
         return profileService.createProfile(profileDto);
     }
 
     @PutMapping("/{id}")
-    public ProfileDto updateProfile(@PathVariable Long id, @RequestBody ProfileDto profileDto) {
+    public ProfileDto updateProfile(@PathVariable Long id, @Valid @RequestBody ProfileDto profileDto) {
         return profileService.updateProfile(id, profileDto);
     }
 

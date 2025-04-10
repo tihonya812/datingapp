@@ -2,6 +2,7 @@ package com.tihonya.datingapp.controller;
 
 import com.tihonya.datingapp.dto.PreferenceDto;
 import com.tihonya.datingapp.service.PreferenceService;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,7 @@ public class PreferenceController {
     private final PreferenceService preferenceService;
 
     @PostMapping
-    public ResponseEntity<PreferenceDto> createPreference(@RequestBody PreferenceDto preferenceDto) {
+    public ResponseEntity<PreferenceDto> createPreference(@Valid @RequestBody PreferenceDto preferenceDto) {
         return ResponseEntity.ok(preferenceService.createPreference(preferenceDto));
     }
 
@@ -37,7 +38,7 @@ public class PreferenceController {
 
     @PutMapping("/{id}")
     public ResponseEntity<PreferenceDto> updatePreference(@PathVariable Long id,
-                                                          @RequestBody PreferenceDto preferenceDto) {
+                                                          @Valid @RequestBody PreferenceDto preferenceDto) {
         return ResponseEntity.ok(preferenceService.updatePreference(id, preferenceDto));
     }
 

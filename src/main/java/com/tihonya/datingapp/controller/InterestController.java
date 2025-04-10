@@ -2,6 +2,7 @@ package com.tihonya.datingapp.controller;
 
 import com.tihonya.datingapp.dto.InterestDto;
 import com.tihonya.datingapp.service.InterestService;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,7 @@ public class InterestController {
 
     // Создание нового интереса
     @PostMapping
-    public ResponseEntity<InterestDto> createInterest(@RequestBody InterestDto interestDto) {
+    public ResponseEntity<InterestDto> createInterest(@Valid @RequestBody InterestDto interestDto) {
         InterestDto createdInterest = interestService.createInterest(interestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdInterest);
     }
@@ -44,7 +45,7 @@ public class InterestController {
     // Обновление интереса
     @PutMapping("/{id}")
     public ResponseEntity<InterestDto> updateInterest(@PathVariable Long id,
-                                                      @RequestBody InterestDto interestDto) {
+                                                      @RequestBody @Valid InterestDto interestDto) {
         InterestDto updatedInterest = interestService.updateInterest(id, interestDto);
         return ResponseEntity.ok(updatedInterest);
     }
