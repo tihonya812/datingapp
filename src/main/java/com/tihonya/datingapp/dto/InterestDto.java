@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class InterestDto {
-    @NotBlank (message = "Название интереса не может быть пустым")
     private Long id;
+    @NotBlank (message = "Название интереса не может быть пустым")
     private String name;
 }

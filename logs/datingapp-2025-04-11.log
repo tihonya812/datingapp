@@ -545,3 +545,124 @@
 2025-04-11 11:08:55.685 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-04-11 11:08:55.723 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-04-11 11:08:55.758 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-11 14:03:52.509 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-11 14:03:52.587 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Starting DatingAppApplication using Java 23.0.2 with PID 2208 (C:\Users\hp\IdeaProjects\datingapp\target\classes started by hp in C:\Users\hp\IdeaProjects\datingapp)
+2025-04-11 14:03:52.587 DEBUG [restartedMain] c.t.datingapp.DatingAppApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-04-11 14:03:52.588 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-11 14:03:52.653 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-11 14:03:52.653 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-11 14:03:53.996 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-11 14:03:54.159 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 147 ms. Found 6 JPA repository interfaces.
+2025-04-11 14:03:55.030 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-11 14:03:55.053 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-11 14:03:55.056 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-11 14:03:55.057 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-04-11 14:03:55.125 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-11 14:03:55.125 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2471 ms
+2025-04-11 14:03:55.399 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-11 14:03:55.556 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-04-11 14:03:55.628 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-11 14:03:56.010 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-11 14:03:56.055 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-11 14:03:56.399 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2726fae4
+2025-04-11 14:03:56.402 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-11 14:03:56.496 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-11 14:03:57.768 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-11 14:03:58.712 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-11 14:03:59.585 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-11 14:04:01.305 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-11 14:04:01.336 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-11 14:04:01.353 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-11 14:04:01.366 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Started DatingAppApplication in 9.262 seconds (process running for 10.972)
+2025-04-11 14:04:01.414 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-11 14:04:01.414 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-11 14:04:01.415 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-11 14:04:02.326 INFO  [http-nio-8080-exec-3] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 746 ms
+2025-04-11 14:05:59.110 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-11 14:05:59.110 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-11 14:06:43.446 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [jakarta.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'java.lang.Long'. Check configuration for 'id']
+2025-04-11 14:07:20.810 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-11 14:07:20.815 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-11 14:07:20.821 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-11 14:07:20.824 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-11 14:07:20.828 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-11 14:07:26.901 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-11 14:07:26.969 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Starting DatingAppApplication using Java 23.0.2 with PID 4332 (C:\Users\hp\IdeaProjects\datingapp\target\classes started by hp in C:\Users\hp\IdeaProjects\datingapp)
+2025-04-11 14:07:26.970 DEBUG [restartedMain] c.t.datingapp.DatingAppApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-04-11 14:07:26.971 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-11 14:07:27.049 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-11 14:07:27.050 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-11 14:07:28.361 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-11 14:07:28.480 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 6 JPA repository interfaces.
+2025-04-11 14:07:29.353 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-11 14:07:29.370 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-11 14:07:29.373 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-11 14:07:29.373 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-04-11 14:07:29.437 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-11 14:07:29.438 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2386 ms
+2025-04-11 14:07:29.634 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-11 14:07:29.689 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-04-11 14:07:29.727 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-11 14:07:29.989 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-11 14:07:30.014 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-11 14:07:30.161 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e69a220
+2025-04-11 14:07:30.163 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-11 14:07:30.231 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-11 14:07:31.277 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-11 14:07:31.754 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-11 14:07:32.398 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-11 14:07:34.329 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-11 14:07:34.395 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-11 14:07:34.439 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-11 14:07:34.461 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Started DatingAppApplication in 8.012 seconds (process running for 9.099)
+2025-04-11 14:07:34.711 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-11 14:07:34.711 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-11 14:07:34.711 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-04-11 14:07:35.228 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.tihonya.datingapp.dto.InterestDto> com.tihonya.datingapp.controller.InterestController.createInterest(com.tihonya.datingapp.dto.InterestDto): [Field error in object 'interestDto' on field 'name': rejected value []; codes [NotBlank.interestDto.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [interestDto.name,name]; arguments []; default message [name]]; default message [Название интереса не может быть пустым]] ]
+2025-04-11 14:08:50.337 INFO  [http-nio-8080-exec-3] c.t.datingapp.aspects.LoggingAspect - [POST] /preferences - ResponseEntity com.tihonya.datingapp.controller.PreferenceController.createPreference(PreferenceDto)
+2025-04-11 14:08:50.511 ERROR [http-nio-8080-exec-3] c.t.datingapp.aspects.LoggingAspect - [ERROR] [POST] /preferences - ResponseEntity com.tihonya.datingapp.controller.PreferenceController.createPreference(PreferenceDto): Profile not found
+2025-04-11 14:08:50.515 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.tihonya.datingapp.exception.NotFoundException: Profile not found]
+2025-04-11 14:09:12.854 INFO  [http-nio-8080-exec-5] c.t.datingapp.aspects.LoggingAspect - [POST] /preferences - ResponseEntity com.tihonya.datingapp.controller.PreferenceController.createPreference(PreferenceDto)
+2025-04-11 14:09:12.856 ERROR [http-nio-8080-exec-5] c.t.datingapp.aspects.LoggingAspect - [ERROR] [POST] /preferences - ResponseEntity com.tihonya.datingapp.controller.PreferenceController.createPreference(PreferenceDto): Profile not found
+2025-04-11 14:09:12.856 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.tihonya.datingapp.exception.NotFoundException: Profile not found]
+2025-04-11 14:09:32.082 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-11 14:09:32.082 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-11 14:11:32.085 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-11 14:11:32.085 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-11 14:11:55.622 INFO  [http-nio-8080-exec-8] c.t.datingapp.aspects.LoggingAspect - [POST] /users - UserDto com.tihonya.datingapp.controller.UserController.createUser(UserDto)
+2025-04-11 14:11:55.629 INFO  [http-nio-8080-exec-8] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: all_users
+2025-04-11 14:12:10.874 INFO  [http-nio-8080-exec-9] c.t.datingapp.aspects.LoggingAspect - [POST] /profiles - ProfileDto com.tihonya.datingapp.controller.ProfileController.createProfile(ProfileDto)
+2025-04-11 14:12:10.904 INFO  [http-nio-8080-exec-9] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: all_profiles
+2025-04-11 14:12:34.563 INFO  [http-nio-8080-exec-4] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 648 ms
+2025-04-11 14:12:52.020 INFO  [http-nio-8080-exec-7] c.t.datingapp.aspects.LoggingAspect - [POST] /profiles/1/like/1 - ResponseEntity com.tihonya.datingapp.controller.ProfileController.likeProfile(Long,Long)
+2025-04-11 14:12:52.020 ERROR [http-nio-8080-exec-7] c.t.datingapp.aspects.LoggingAspect - [ERROR] [POST] /profiles/1/like/1 - ResponseEntity com.tihonya.datingapp.controller.ProfileController.likeProfile(Long,Long): Нельзя лайкать свой профиль!
+2025-04-11 14:12:52.026 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.IllegalArgumentException: Нельзя лайкать свой профиль!]
+2025-04-11 14:13:32.086 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-11 14:13:32.086 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-11 14:14:38.779 INFO  [http-nio-8080-exec-10] c.t.datingapp.aspects.LoggingAspect - [GET] /logs/2025-04-10 - ResponseEntity com.tihonya.datingapp.controller.LogController.downloadLog(String)
+2025-04-11 14:14:49.536 INFO  [http-nio-8080-exec-1] c.t.datingapp.aspects.LoggingAspect - [GET] /logs/2025-04-11 - ResponseEntity com.tihonya.datingapp.controller.LogController.downloadLog(String)
+2025-04-11 14:15:20.947 INFO  [http-nio-8080-exec-3] c.t.datingapp.aspects.LoggingAspect - [POST] /profiles/1/like/1 - ResponseEntity com.tihonya.datingapp.controller.ProfileController.likeProfile(Long,Long)
+2025-04-11 14:15:20.950 ERROR [http-nio-8080-exec-3] c.t.datingapp.aspects.LoggingAspect - [ERROR] [POST] /profiles/1/like/1 - ResponseEntity com.tihonya.datingapp.controller.ProfileController.likeProfile(Long,Long): Нельзя лайкать свой профиль!
+2025-04-11 14:15:20.950 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.IllegalArgumentException: Нельзя лайкать свой профиль!]
+2025-04-11 14:15:29.789 INFO  [http-nio-8080-exec-2] c.t.datingapp.aspects.LoggingAspect - [GET] /logs/2025-04-11 - ResponseEntity com.tihonya.datingapp.controller.LogController.downloadLog(String)
+2025-04-11 14:15:32.090 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-11 14:15:32.090 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-11 14:15:43.123 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-11 14:15:43.129 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-11 14:15:43.135 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-11 14:15:43.143 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-11 14:15:43.150 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
