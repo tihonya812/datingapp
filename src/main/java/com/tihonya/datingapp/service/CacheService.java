@@ -15,8 +15,8 @@ import org.springframework.stereotype.Service;
 public class CacheService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CacheService.class);
 
-    private static final int MAX_CACHE_SIZE = 100; // Максимальный размер кэша
-    private static final long CLEANUP_INTERVAL_MS = 2L * 60 * 1000; // Ин
+    private static final int MAX_CACHE_SIZE = 3; // Максимальный размер кэша
+    private static final long CLEANUP_INTERVAL_MS = 3L * 1000; // Ин
     // тервал очистки (2 минуты)
 
     private final ConcurrentHashMap<String, CacheEntry> cache = new ConcurrentHashMap<>();
@@ -58,6 +58,11 @@ public class CacheService {
     public void printCache() {
         LOGGER.info("📌 Текущее состояние кэша:");
         cache.forEach((key, entry) -> LOGGER.info("🔹 {} -> {}", key, entry.getValue()));
+    }
+
+    // Новый метод getSize, возвращающий текущий размер кэша
+    public int getSize() {
+        return cache.size();
     }
 
     private void removeOldestEntry() {

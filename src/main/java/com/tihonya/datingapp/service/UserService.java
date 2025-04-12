@@ -4,9 +4,7 @@ import com.tihonya.datingapp.dto.UserDto;
 import com.tihonya.datingapp.enums.Role;
 import com.tihonya.datingapp.exception.NotFoundException;
 import com.tihonya.datingapp.mapper.UserMapper;
-import com.tihonya.datingapp.model.Interest;
 import com.tihonya.datingapp.model.User;
-import com.tihonya.datingapp.repository.InterestRepository;
 import com.tihonya.datingapp.repository.UserRepository;
 import com.tihonya.datingapp.util.HashUtil;
 import jakarta.transaction.Transactional;
@@ -17,13 +15,11 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class UserService {
-    private static final String INTEREST_NOT_FOUND = "Interest not found";
     private static final String USER_NOT_FOUND = "User not found";
     private static final String CACHE_KEY_USERS = "all_users";
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-    private final InterestRepository interestRepository;
     private final CacheService cacheService;
 
     @Transactional
@@ -52,8 +48,17 @@ public class UserService {
 
     @Transactional
     public UserDto createUser(UserDto userDto) {
+        // Проверяем, существует ли уже пользователь с таким email
+        if (userRepository.existsByEmail(userDto.getEmail())) {
+            throw new IllegalArgumentException("Этот email уже занят.");
+        }
+
+        if (userRepository.existsByUsername(userDto.getUsername())) {
+            throw new IllegalArgumentException("Этот Логин уже занят.");
+        }
+
         User user = new User();
-        user.setName(userDto.getName());
+        user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
         user.setPassword(HashUtil.hashPassword(userDto.getPassword())); // Хешируем пароль
         user.setRole(Role.valueOf(userDto.getRole())); // Преобразуем строку в Enum
@@ -65,7 +70,20 @@ public class UserService {
     public UserDto updateUser(Long id, UserDto userDto) {
         User user = userRepository.findById(id).orElseThrow(()
                 -> new NotFoundException(USER_NOT_FOUND));
-        user.setName(userDto.getName());
+
+        // Проверяем уникальность email, исключая текущего пользователя
+        if (!user.getEmail().equals(userDto.getEmail()) &&
+                userRepository.existsByEmail(userDto.getEmail())) {
+            throw new IllegalArgumentException("Этот email уже занят.");
+        }
+
+        // Проверяем уникальность логина, исключая текущего пользователя
+        if (!user.getUsername().equals(userDto.getUsername()) &&
+                userRepository.existsByUsername(userDto.getUsername())) {
+            throw new IllegalArgumentException("Этот Логин уже занят.");
+        }
+
+        user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
         if (userDto.getPassword() != null && !userDto.getPassword().isEmpty()) {
             user.setPassword(HashUtil.hashPassword(userDto.getPassword()));
@@ -84,20 +102,6 @@ public class UserService {
         }
         userRepository.deleteById(id);
         clearUserCache();
-    }
-
-    @Transactional
-    public UserDto addInterestToUser(Long userId, Long interestId) {
-        User user = userRepository.findById(userId).orElseThrow(()
-                -> new NotFoundException(USER_NOT_FOUND));
-        Interest interest = interestRepository.findById(interestId).orElseThrow(()
-                -> new NotFoundException(INTEREST_NOT_FOUND));
-
-        user.getInterests().add(interest); // Добавляем интерес пользователю
-        userRepository.save(user); // Сохраняем пользователя с новым интересом
-
-        clearUserCache();
-        return userMapper.toDto(user); // Возвращаем обновленного пользователя
     }
 }
 

@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/interests")
 @RequiredArgsConstructor
-@Tag(name = "Interests", description = "API для работыс интересами")
+@Tag(name = "Interests", description = "API для работы с интересами")
 public class InterestController {
     private final InterestService interestService;
 
@@ -69,5 +69,15 @@ public class InterestController {
             @PathVariable Long id) {
         interestService.deleteInterest(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @Operation(summary = "Создание нескольких интересов",
+            description = "Создает несколько интересов и возвращает их данные")
+    @PostMapping("/bulk")
+    public ResponseEntity<List<InterestDto>> createInterestsBulk(
+            @Parameter(description = "Список интересов")
+            @Valid @RequestBody List<InterestDto> interestDtos) {
+        List<InterestDto> createdInterests = interestService.createInterests(interestDtos);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdInterests);
     }
 }

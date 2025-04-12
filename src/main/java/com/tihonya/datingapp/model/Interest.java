@@ -27,5 +27,5 @@ public class Interest {
     private String name;
 
     @ManyToMany(mappedBy = "interests", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<User> users = new ArrayList<>();
+    private List<Profile> profiles = new ArrayList<>();
 }

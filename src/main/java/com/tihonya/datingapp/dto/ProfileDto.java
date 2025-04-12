@@ -26,5 +26,7 @@ public class ProfileDto {
     private Long userId;
     private List<PhotoDto> photos;
     private List<PreferenceDto> preferences;
+
+    private List<InterestDto> interests;
 }
 

@@ -1,5 +1,6 @@
 package com.tihonya.datingapp.mapper;
 
+import com.tihonya.datingapp.dto.InterestDto;
 import com.tihonya.datingapp.dto.PhotoDto;
 import com.tihonya.datingapp.dto.PreferenceDto;
 import com.tihonya.datingapp.dto.ProfileDto;
@@ -14,11 +15,14 @@ import org.springframework.stereotype.Component;
 public class ProfileMapper {
     private final PreferenceMapper preferenceMapper;
     private final PhotoMapper photoMapper;
+    private final InterestMapper interestMapper;
 
     // Конструктор для инъекции зависимости PreferenceMapper
-    public ProfileMapper(PreferenceMapper preferenceMapper, PhotoMapper photoMapper) {
+    public ProfileMapper(PreferenceMapper preferenceMapper, PhotoMapper photoMapper,
+                         InterestMapper interestMapper) {
         this.preferenceMapper = preferenceMapper;
         this.photoMapper = photoMapper;
+        this.interestMapper = interestMapper;
     }
 
     public ProfileDto toDto(Profile profile) {
@@ -29,6 +33,13 @@ public class ProfileMapper {
         dto.setCity(profile.getCity());
         dto.setBio(profile.getBio());
         dto.setUserId(profile.getUser().getId()); // Добавляем связь с User
+
+        // Интересы
+        List<InterestDto> interestDtos = profile.getInterests().stream()
+                .map(interestMapper::toDto)
+                .collect(Collectors.toList());
+        dto.setInterests(interestDtos);
+
         // Преобразуем предпочтения в PreferenceDto
         List<PreferenceDto> preferenceDtos = profile.getPreferences().stream()
                 .map(preferenceMapper::toDto)  // Маппируем Preference на PreferenceDto

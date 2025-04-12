@@ -4,11 +4,12 @@ import com.tihonya.datingapp.dto.InterestDto;
 import com.tihonya.datingapp.exception.NotFoundException;
 import com.tihonya.datingapp.mapper.InterestMapper;
 import com.tihonya.datingapp.model.Interest;
-import com.tihonya.datingapp.model.User;
+import com.tihonya.datingapp.model.Profile;
 import com.tihonya.datingapp.repository.InterestRepository;
-import com.tihonya.datingapp.repository.UserRepository;
+import com.tihonya.datingapp.repository.ProfileRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Transactional
@@ -19,16 +20,16 @@ public class InterestService {
 
     private final InterestRepository interestRepository;
     private final InterestMapper interestMapper;
-    private final UserRepository userRepository;
     private final CacheService cacheService;
+    private final ProfileRepository profileRepository;
 
     public InterestService(InterestRepository interestRepository,
-                           InterestMapper interestMapper, UserRepository userRepository,
-                           CacheService cacheService) {
+                           InterestMapper interestMapper,
+                           CacheService cacheService, ProfileRepository profileRepository) {
         this.interestRepository = interestRepository;
         this.interestMapper = interestMapper;
-        this.userRepository = userRepository;
         this.cacheService = cacheService;
+        this.profileRepository = profileRepository;
     }
 
     // Создание интереса
@@ -81,12 +82,31 @@ public class InterestService {
         Interest interest = interestRepository.findById(id).orElseThrow(()
                 -> new NotFoundException(INTEREST_NOT_FOUND));
         // Убираем связь между интересом и пользователями
-        for (User user : interest.getUsers()) {
-            user.getInterests().remove(interest);
+        for (Profile profile : interest.getProfiles()) {
+            profile.getInterests().remove(interest);
         }
-        userRepository.saveAll(interest.getUsers()); // Сохраняем изменения у пользователей
+        profileRepository.saveAll(interest.getProfiles()); // Сохраняем изменения у пользователей
         interestRepository.delete(interest);
         clearInterestCache();
+    }
+
+    @Transactional
+    public List<InterestDto> createInterests(List<InterestDto> interestDtos) {
+        List<Interest> interests = interestDtos.stream()
+                .map(dto -> {
+                    Interest interest = new Interest();
+                    interest.setName(dto.getName());
+                    return interest;
+                })
+                .collect(Collectors.toList());
+
+        // Сохраняем все интересы сразу
+        interestRepository.saveAll(interests);
+
+        // Возвращаем созданные интересы
+        return interests.stream()
+                .map(interestMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
 

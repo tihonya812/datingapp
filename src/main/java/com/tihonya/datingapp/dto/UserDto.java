@@ -3,7 +3,6 @@ package com.tihonya.datingapp.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import java.util.List;
 import lombok.Data;
 
 @Data
@@ -11,7 +10,7 @@ public class UserDto {
     private Long id;
 
     @NotBlank (message = "Логин не может быть пустым")
-    private String name;
+    private String username;
 
     @Email (message = "Некорректный email")
     @NotBlank (message = "Email обязателен")
@@ -21,6 +20,5 @@ public class UserDto {
     private String password;
     private String role;
     private ProfileDto profile;
-    private List<InterestDto> interests;
 }
 

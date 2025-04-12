@@ -1,0 +1,307 @@
+2025-04-13 00:34:48.172 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:34:48.174 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:34:48.174 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:34:48.190 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:34:51.201 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:34:51.221 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:34:51.221 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:34:51.222 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:34:51.223 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:34:51.223 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:34:51.227 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:34:51.227 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:34:51.237 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:34:51.237 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:34:51.238 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:34:51.238 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:34:51.243 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:34:51.251 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:34:51.251 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:34:51.251 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:34:51.251 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key1
+2025-04-13 00:36:06.433 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:36:06.435 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:36:06.435 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:36:06.451 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:36:09.465 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:36:09.489 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:36:09.490 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:36:09.490 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:36:09.491 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:36:09.491 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:36:09.494 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:36:09.495 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:36:09.502 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:36:09.502 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:36:09.502 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:36:09.503 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:36:09.509 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:36:09.513 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:36:09.514 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:36:09.514 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:36:09.514 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key1
+2025-04-13 00:40:56.731 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:40:56.733 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:40:56.733 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:40:56.749 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:40:59.730 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:40:59.730 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:40:59.761 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:40:59.761 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:40:59.762 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:40:59.762 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🔹 testKey -> testValue
+2025-04-13 00:40:59.781 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:40:59.782 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:40:59.783 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:40:59.783 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:40:59.783 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:40:59.789 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:40:59.789 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:40:59.794 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:40:59.795 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:40:59.795 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:40:59.796 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:40:59.797 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:40:59.802 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:40:59.806 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:40:59.806 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:40:59.806 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:40:59.806 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key1
+2025-04-13 00:41:32.720 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:41:32.723 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:41:32.723 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:41:32.737 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:41:35.709 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:41:35.710 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:41:35.739 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:41:35.739 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:41:35.740 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:41:35.746 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:41:35.746 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:41:35.748 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:41:35.748 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:41:35.748 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:41:35.753 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:41:35.753 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:41:35.758 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:41:35.759 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:41:35.759 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:41:35.760 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:41:35.760 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:41:35.766 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:41:35.772 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:41:35.773 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:41:35.774 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:41:35.774 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key1
+2025-04-13 00:42:05.153 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:42:05.155 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:42:05.155 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:42:05.174 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:42:08.159 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:42:08.160 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:42:08.182 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:42:08.182 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:42:08.183 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:42:08.190 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:42:08.190 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:42:08.190 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:42:08.190 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:42:08.190 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:42:08.194 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:42:08.195 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:42:08.202 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:42:08.202 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:42:08.202 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:42:08.203 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:42:08.204 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:42:08.210 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:42:08.213 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:42:08.214 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:42:08.214 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:42:08.214 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key1
+2025-04-13 00:42:59.689 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:42:59.692 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:42:59.692 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:42:59.708 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:43:02.693 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:43:02.694 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:43:02.709 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:43:02.709 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:43:02.711 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:43:02.715 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:43:02.715 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:43:02.716 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:43:02.716 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:43:02.716 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:43:02.719 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:43:02.720 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:43:02.726 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:43:02.726 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:43:02.727 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:43:02.727 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:43:02.727 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:43:02.733 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:43:02.737 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:43:02.738 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:43:02.738 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:43:02.738 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key1
+2025-04-13 00:45:59.301 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:45:59.304 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:45:59.304 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:45:59.322 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:46:02.297 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:46:02.297 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:46:02.327 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:46:02.327 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:46:02.328 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:46:02.334 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:46:02.334 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:46:02.335 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:46:02.335 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:46:02.335 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:46:02.340 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:46:02.340 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:46:02.348 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:46:02.349 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:46:02.349 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:46:02.351 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:46:02.351 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:46:02.354 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:46:02.359 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:46:02.359 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:46:02.361 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:46:02.361 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:46:02.361 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 00:46:02.361 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 00:50:30.660 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:50:30.662 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:50:30.663 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:50:30.678 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:50:33.647 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:50:33.649 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:50:33.692 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:50:33.692 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:50:33.693 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:50:33.702 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:50:33.702 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:50:33.703 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:50:33.703 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:50:33.703 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:50:33.707 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:50:33.707 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:50:33.714 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:50:33.714 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:50:33.714 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:50:33.716 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:50:33.716 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:50:33.722 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:50:33.726 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:50:33.726 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:50:33.726 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:50:33.726 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:50:33.726 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:50:33.726 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 00:50:33.727 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 00:54:07.118 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:54:07.126 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:54:07.126 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:54:07.132 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:54:10.115 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:10.118 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:10.145 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:10.145 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:54:10.145 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:10.149 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:54:10.150 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:54:10.150 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:54:10.150 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:54:10.150 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:54:10.154 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:54:10.154 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:54:10.165 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:54:10.166 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:54:10.166 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:54:10.169 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:54:10.169 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:54:10.173 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:10.177 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:54:10.179 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:54:10.180 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:54:10.180 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:54:10.180 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:54:10.180 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 00:54:10.180 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 00:54:13.121 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:13.121 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:13.136 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:13.136 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:13.152 INFO  [pool-4-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:13.153 INFO  [pool-4-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:13.167 INFO  [pool-5-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:13.167 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:13.167 INFO  [pool-5-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:13.167 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:13.167 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 🔹 key4 -> value
+2025-04-13 00:54:13.183 INFO  [pool-7-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:13.183 INFO  [pool-8-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:13.183 INFO  [pool-7-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:13.184 INFO  [pool-8-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:16.124 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:16.124 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:16.140 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:16.140 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:16.155 INFO  [pool-5-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:16.156 INFO  [pool-4-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:16.158 INFO  [pool-5-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:16.159 INFO  [pool-4-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:16.176 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:16.176 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:16.188 INFO  [pool-8-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:16.188 INFO  [pool-7-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:54:16.188 INFO  [pool-7-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:54:16.188 INFO  [pool-8-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:02.289 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:57:02.294 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 00:57:02.294 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:57:02.302 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:57:05.285 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:05.286 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:05.301 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:05.302 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:05.302 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🔹 testKey -> testValue
+2025-04-13 00:57:05.316 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 00:57:05.322 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 00:57:05.323 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 00:57:05.324 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 00:57:05.324 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 00:57:05.324 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 00:57:05.327 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 00:57:05.327 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 00:57:05.331 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:57:05.331 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:57:05.331 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:57:05.334 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:57:05.334 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:57:05.337 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:05.339 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 00:57:05.341 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 00:57:05.341 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 00:57:05.341 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 00:57:05.341 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 00:57:05.342 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 00:57:05.342 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 00:57:08.286 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:08.287 INFO  [pool-2-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:08.302 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:08.302 INFO  [pool-3-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:08.333 INFO  [pool-5-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:08.333 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:08.333 INFO  [pool-4-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:08.334 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:08.334 INFO  [pool-4-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:08.334 INFO  [pool-5-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:08.334 INFO  [pool-6-thread-1] c.t.datingapp.service.CacheService - 🔹 key4 -> value
+2025-04-13 00:57:08.349 INFO  [pool-7-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:08.349 INFO  [pool-8-thread-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 00:57:08.350 INFO  [pool-7-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 00:57:08.350 INFO  [pool-8-thread-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:

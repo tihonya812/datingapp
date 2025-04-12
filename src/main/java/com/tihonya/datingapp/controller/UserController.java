@@ -68,16 +68,5 @@ public class UserController {
             @PathVariable Long id) {
         userService.deleteUser(id);
     }
-
-    @Operation(summary = "Добавить интерес пользователю",
-            description = "Добавляет интерес пользователю по указанным ID")
-    @PostMapping("/{userId}/interests/{interestId}")
-    public UserDto addInterestToUser(
-            @Parameter(description = "Идентификатор пользователя")
-            @PathVariable Long userId,
-            @Parameter(description = "Идентификатор интереса")
-            @PathVariable Long interestId) {
-        return userService.addInterestToUser(userId, interestId);
-    }
 }
 

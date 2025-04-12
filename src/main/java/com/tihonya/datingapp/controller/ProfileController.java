@@ -91,4 +91,15 @@ public class ProfileController {
         matchService.likeProfile(likerId, likedId);
         return ResponseEntity.ok("Лайк поставлен!");
     }
+
+    @Operation(summary = "Добавить Интерес профилю",
+            description = "Добавляет интерес профилю по указанному ID")
+    @PostMapping("/{profileId}/interests/{interestsId}")
+    public ProfileDto addInterestToProfile(
+            @Parameter (description = "Идентификатор профиля")
+            @PathVariable Long profileId,
+            @Parameter (description = "Идентификатор интереса")
+            @PathVariable Long interestsId) {
+        return profileService.addInterestToProfile(profileId, interestsId);
+    }
 }
