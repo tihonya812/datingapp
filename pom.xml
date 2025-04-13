@@ -32,7 +32,7 @@
         <sonar.organization>tihonya812</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.login>${env.SONAR_TOKEN}</sonar.login>
-        <sonar.coverage.exclusions>
+        <!--  <sonar.coverage.exclusions>
             **/aspects/**/*
             **/config/**,
             **/controller/**,
@@ -44,7 +44,8 @@
             **/model/**,
             **/repository/**,
             **/DatingAppApplication.java
-        </sonar.coverage.exclusions>
+        </sonar.coverage.exclusions> -->
+        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-report/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
     <dependencies>
         <dependency>
@@ -116,7 +117,7 @@
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.7</version>
+            <version>0.8.13</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -130,7 +131,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -153,7 +153,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version>
+                <version>0.8.13</version>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
@@ -163,17 +163,21 @@
                     </execution>
                     <execution>
                         <id>report</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
                         <configuration>
+                            <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
                             <formats>
-                                <format>XML</format>
+                                <format>xml</format>
+                                <format>html</format>
                             </formats>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
