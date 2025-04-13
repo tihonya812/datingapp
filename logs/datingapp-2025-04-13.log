@@ -563,3 +563,323 @@
 2025-04-13 14:19:26.853 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
 2025-04-13 14:19:26.853 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
 2025-04-13 14:19:26.853 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 14:55:58.736 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 14:55:58.745 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 14:55:58.745 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 14:55:58.754 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 14:55:58.754 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 14:55:58.754 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 14:55:58.755 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 14:55:58.755 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 14:55:58.760 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 14:55:58.761 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 14:55:58.769 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 14:55:58.770 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 14:55:58.771 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 14:55:58.773 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 14:55:58.774 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 14:55:58.782 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 14:55:58.784 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 14:55:58.785 INFO  [main] c.t.datingapp.service.CacheService - 🔹 testKey -> testValue
+2025-04-13 14:55:58.794 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 14:55:58.794 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 14:55:58.794 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 14:55:58.794 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 14:55:58.795 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 14:55:58.796 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 14:55:58.796 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 16:20:16.765 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:20:16.767 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:20:16.784 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:20:16.785 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 16:20:16.786 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 16:20:16.804 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:20:16.804 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:20:16.806 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 16:20:16.806 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 16:20:16.807 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 16:20:16.807 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 16:20:16.807 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 16:20:16.812 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:20:16.813 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:20:16.814 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:20:16.816 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 16:20:16.822 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:20:16.823 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:20:16.826 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 16:20:16.826 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 16:20:16.826 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 16:20:16.828 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 16:20:16.829 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 16:20:16.839 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:20:16.839 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:20:16.841 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:20:16.842 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:20:16.842 INFO  [main] c.t.datingapp.service.CacheService - 🔹 testKey -> testValue
+2025-04-13 16:20:16.849 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:20:16.849 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:20:16.850 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 16:20:16.851 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 16:20:16.852 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 16:20:16.852 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 16:20:16.852 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 16:20:16.852 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 16:20:16.852 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 16:22:26.150 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:26.152 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:26.164 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:22:26.165 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 16:22:26.166 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 16:22:26.184 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:26.185 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:26.187 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 16:22:26.187 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 16:22:26.187 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 16:22:26.187 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 16:22:26.187 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 16:22:26.192 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:26.192 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:26.193 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:22:26.194 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 16:22:26.201 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:26.201 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:26.203 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 16:22:26.204 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 16:22:26.204 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 16:22:26.205 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 16:22:26.206 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 16:22:26.211 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:26.212 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:26.213 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:22:26.214 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:26.214 INFO  [main] c.t.datingapp.service.CacheService - 🔹 testKey -> testValue
+2025-04-13 16:22:26.221 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:26.224 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:26.227 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 16:22:26.227 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 16:22:26.228 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 16:22:26.228 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 16:22:26.228 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 16:22:26.228 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 16:22:26.229 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 16:22:41.472 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-13 16:22:41.546 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Starting DatingAppApplication using Java 23.0.2 with PID 9424 (C:\Users\hp\IdeaProjects\datingapp\target\classes started by hp in C:\Users\hp\IdeaProjects\datingapp)
+2025-04-13 16:22:41.547 DEBUG [restartedMain] c.t.datingapp.DatingAppApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-04-13 16:22:41.547 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 16:22:41.631 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-13 16:22:41.632 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-13 16:22:42.801 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 16:22:42.873 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 6 JPA repository interfaces.
+2025-04-13 16:22:43.559 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-13 16:22:43.574 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 16:22:43.575 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 16:22:43.576 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-04-13 16:22:43.625 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 16:22:43.625 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1993 ms
+2025-04-13 16:22:43.807 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 16:22:43.879 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-04-13 16:22:43.915 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-13 16:22:44.196 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-13 16:22:44.229 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 16:22:44.551 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ef0b0d5
+2025-04-13 16:22:44.554 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 16:22:44.661 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-13 16:22:45.738 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-13 16:22:46.243 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 16:22:46.476 INFO  [restartedMain] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:46.476 INFO  [restartedMain] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:46.739 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-13 16:22:47.857 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-13 16:22:47.880 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 16:22:47.895 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-13 16:22:47.907 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Started DatingAppApplication in 6.868 seconds (process running for 8.485)
+2025-04-13 16:22:47.912 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:47.912 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:50.906 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:50.907 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:53.919 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:53.919 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:56.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:56.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:22:59.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:22:59.919 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:02.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:02.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:05.908 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:05.908 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:08.912 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:08.912 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:11.915 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:11.916 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:14.907 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:14.907 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:17.911 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:17.911 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:20.919 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:20.920 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:23.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:23.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:26.916 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:26.916 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:29.906 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:29.906 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:32.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:32.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:35.916 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:35.916 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:38.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:38.912 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:41.906 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:41.907 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:44.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:44.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:47.909 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:47.909 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:47.983 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 16:23:47.983 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 16:23:47.984 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-13 16:23:48.021 INFO  [http-nio-8080-exec-2] c.t.datingapp.aspects.LoggingAspect - [GET] /interests - List com.tihonya.datingapp.controller.InterestController.getAllInterests()
+2025-04-13 16:23:50.917 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:50.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:53.909 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:53.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:56.914 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:56.915 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:23:59.911 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:23:59.911 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:24:02.914 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:24:02.914 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:24:03.784 INFO  [http-nio-8080-exec-3] c.t.datingapp.aspects.LoggingAspect - [GET] /interests - List com.tihonya.datingapp.controller.InterestController.getAllInterests()
+2025-04-13 16:24:05.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:24:05.918 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:24:08.919 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:24:08.919 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:24:11.910 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:24:11.911 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:24:12.188 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-13 16:24:12.194 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-13 16:24:12.200 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 16:24:12.204 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 16:24:12.207 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 16:26:38.951 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-13 16:26:39.001 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Starting DatingAppApplication using Java 23.0.2 with PID 5972 (C:\Users\hp\IdeaProjects\datingapp\target\classes started by hp in C:\Users\hp\IdeaProjects\datingapp)
+2025-04-13 16:26:39.001 DEBUG [restartedMain] c.t.datingapp.DatingAppApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-04-13 16:26:39.002 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 16:26:39.054 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-13 16:26:39.055 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-13 16:26:39.834 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 16:26:39.892 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 6 JPA repository interfaces.
+2025-04-13 16:26:40.507 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-13 16:26:40.523 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 16:26:40.525 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 16:26:40.525 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-04-13 16:26:40.570 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 16:26:40.571 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1515 ms
+2025-04-13 16:26:40.718 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 16:26:40.811 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-04-13 16:26:40.842 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-13 16:26:41.133 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-13 16:26:41.162 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 16:26:41.449 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3e602077
+2025-04-13 16:26:41.451 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 16:26:41.521 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-13 16:26:42.611 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-13 16:26:43.074 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 16:26:43.299 INFO  [restartedMain] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:26:43.299 INFO  [restartedMain] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:26:43.542 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-13 16:26:44.630 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-13 16:26:44.651 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 16:26:44.667 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-13 16:26:44.682 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Started DatingAppApplication in 6.075 seconds (process running for 7.367)
+2025-04-13 16:26:44.686 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:26:44.686 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:26:54.238 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 16:26:54.238 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 16:26:54.239 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-13 16:26:54.271 INFO  [http-nio-8080-exec-1] c.t.datingapp.aspects.LoggingAspect - [GET] /interests - List com.tihonya.datingapp.controller.InterestController.getAllInterests()
+2025-04-13 16:27:00.741 INFO  [http-nio-8080-exec-3] c.t.datingapp.aspects.LoggingAspect - [GET] /users - List com.tihonya.datingapp.controller.UserController.getAllUsers()
+2025-04-13 16:27:08.285 INFO  [http-nio-8080-exec-6] c.t.datingapp.aspects.LoggingAspect - [GET] /users - List com.tihonya.datingapp.controller.UserController.getAllUsers()
+2025-04-13 16:27:14.681 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:27:14.681 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:27:19.242 INFO  [http-nio-8080-exec-4] c.t.datingapp.aspects.LoggingAspect - [GET] /users - List com.tihonya.datingapp.controller.UserController.getAllUsers()
+2025-04-13 16:27:21.414 INFO  [http-nio-8080-exec-5] c.t.datingapp.aspects.LoggingAspect - [GET] /users - List com.tihonya.datingapp.controller.UserController.getAllUsers()
+2025-04-13 16:27:23.764 INFO  [http-nio-8080-exec-7] c.t.datingapp.aspects.LoggingAspect - [GET] /users - List com.tihonya.datingapp.controller.UserController.getAllUsers()
+2025-04-13 16:27:28.105 INFO  [http-nio-8080-exec-8] c.t.datingapp.aspects.LoggingAspect - [GET] /users/1 - UserDto com.tihonya.datingapp.controller.UserController.getUserById(Long)
+2025-04-13 16:27:28.107 INFO  [http-nio-8080-exec-8] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: user_1
+2025-04-13 16:27:28.121 INFO  [http-nio-8080-exec-8] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: user_1
+2025-04-13 16:27:30.231 INFO  [http-nio-8080-exec-9] c.t.datingapp.aspects.LoggingAspect - [GET] /users/1 - UserDto com.tihonya.datingapp.controller.UserController.getUserById(Long)
+2025-04-13 16:27:30.233 INFO  [http-nio-8080-exec-9] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: user_1
+2025-04-13 16:27:32.181 INFO  [http-nio-8080-exec-10] c.t.datingapp.aspects.LoggingAspect - [GET] /users/1 - UserDto com.tihonya.datingapp.controller.UserController.getUserById(Long)
+2025-04-13 16:27:32.184 INFO  [http-nio-8080-exec-10] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: user_1
+2025-04-13 16:27:34.603 INFO  [http-nio-8080-exec-2] c.t.datingapp.aspects.LoggingAspect - [GET] /users/1 - UserDto com.tihonya.datingapp.controller.UserController.getUserById(Long)
+2025-04-13 16:27:34.604 INFO  [http-nio-8080-exec-2] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: user_1
+2025-04-13 16:27:36.651 INFO  [http-nio-8080-exec-1] c.t.datingapp.aspects.LoggingAspect - [GET] /users/1 - UserDto com.tihonya.datingapp.controller.UserController.getUserById(Long)
+2025-04-13 16:27:36.652 INFO  [http-nio-8080-exec-1] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: user_1
+2025-04-13 16:27:40.635 INFO  [http-nio-8080-exec-3] c.t.datingapp.aspects.LoggingAspect - [GET] /interests/1 - ResponseEntity com.tihonya.datingapp.controller.InterestController.getInterestById(Long)
+2025-04-13 16:27:40.638 INFO  [http-nio-8080-exec-3] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: interest_1
+2025-04-13 16:27:40.643 INFO  [http-nio-8080-exec-3] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: interest_1
+2025-04-13 16:27:44.196 INFO  [http-nio-8080-exec-6] c.t.datingapp.aspects.LoggingAspect - [GET] /interests/1 - ResponseEntity com.tihonya.datingapp.controller.InterestController.getInterestById(Long)
+2025-04-13 16:27:44.197 INFO  [http-nio-8080-exec-6] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: interest_1
+2025-04-13 16:27:44.681 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:27:44.681 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:27:44.681 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🔹 user_1 -> UserDto(id=1, username=Tixon, email=Lola@gmail.com, password=ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f, role=ADMIN, profile=ProfileDto(id=1, name=ффыв, age=22, city=Minsk, bio=I'am Тихоня, userId=1, photos=[], preferences=[], interests=[InterestDto(id=1, name=Sports), InterestDto(id=2, name=asdqweqwe)]))
+2025-04-13 16:27:44.684 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🔹 interest_1 -> InterestDto(id=1, name=Sports)
+2025-04-13 16:27:45.580 INFO  [http-nio-8080-exec-4] c.t.datingapp.aspects.LoggingAspect - [GET] /interests/1 - ResponseEntity com.tihonya.datingapp.controller.InterestController.getInterestById(Long)
+2025-04-13 16:27:45.582 INFO  [http-nio-8080-exec-4] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: interest_1
+2025-04-13 16:27:54.231 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-13 16:27:54.237 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-13 16:27:54.242 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 16:27:54.245 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 16:27:54.249 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-13 16:28:14.784 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:28:14.787 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:28:14.789 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:28:14.791 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: testKey
+2025-04-13 16:28:14.791 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: testKey
+2025-04-13 16:28:14.795 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:28:14.795 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:28:14.796 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_20_30
+2025-04-13 16:28:14.796 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: matches_1_25_35
+2025-04-13 16:28:14.797 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Очищены все мэтчи для профиля 1
+2025-04-13 16:28:14.797 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_20_30
+2025-04-13 16:28:14.797 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: matches_1_25_35
+2025-04-13 16:28:14.800 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:28:14.800 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:28:14.801 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:28:14.802 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: testKey
+2025-04-13 16:28:14.805 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:28:14.806 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:28:14.807 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 16:28:14.807 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 16:28:14.807 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 16:28:14.809 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 16:28:14.809 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 16:28:14.811 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:28:14.812 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:28:14.813 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: testKey
+2025-04-13 16:28:14.813 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:28:14.813 INFO  [main] c.t.datingapp.service.CacheService - 🔹 testKey -> testValue
+2025-04-13 16:28:14.816 INFO  [main] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 16:28:14.816 INFO  [main] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key1
+2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key2
+2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key3
+2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - 🗑️ Удален самый старый кэш-ключ: key1
+2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
+2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
+2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2

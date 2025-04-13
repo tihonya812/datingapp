@@ -4,11 +4,9 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,8 +14,6 @@ public class CacheService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CacheService.class);
 
     private static final int MAX_CACHE_SIZE = 3; // Максимальный размер кэша
-    private static final long CLEANUP_INTERVAL_MS = 3L * 1000; // Ин
-    // тервал очистки (2 минуты)
 
     private final ConcurrentHashMap<String, CacheEntry> cache = new ConcurrentHashMap<>();
 
@@ -76,18 +72,15 @@ public class CacheService {
         });
     }
 
-    private void startCacheCleanupTask() {
-        ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-
-        scheduler.scheduleAtFixedRate(() -> {
-            try {
-                // Убираем устаревшие элементы из кэша
-                cache.entrySet().removeIf(entry -> entry.getValue().isExpired());
-                LOGGER.info("🧹 Очистка устаревших записей из кэша");
-                printCache();
-            } catch (Exception e) {
-                LOGGER.error("❌ Ошибка очистки кэша", e);
-            }
-        }, CLEANUP_INTERVAL_MS, CLEANUP_INTERVAL_MS, TimeUnit.MILLISECONDS);
+    // 🕒 Периодическая очистка устаревших записей (каждые 3 секунды)
+    @Scheduled(fixedRate = 30000)
+    public void startCacheCleanupTask() {
+        try {
+            cache.entrySet().removeIf(entry -> entry.getValue().isExpired());
+            LOGGER.info("🧹 Очистка устаревших записей из кэша");
+            printCache();
+        } catch (Exception e) {
+            LOGGER.error("❌ Ошибка очистки кэша", e);
+        }
     }
 }
