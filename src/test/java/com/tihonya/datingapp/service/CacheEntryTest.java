@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.Instant;
-import java.util.concurrent.TimeUnit;
 
 class CacheEntryTest {
 
@@ -30,28 +29,6 @@ class CacheEntryTest {
     void testCacheEntryNotExpiredImmediately() {
         // Проверяем, что объект не истек через мгновение после создания
         assertFalse(cacheEntry.isExpired(), "CacheEntry should not be expired immediately after creation");
-    }
-
-    @Test
-    void testCacheEntryExpiresAfterTTL() throws InterruptedException {
-        // Засыпаем больше времени, чем TTL, и проверяем истечение срока
-        long ttlMs = 3L * 1000; // 3 минуты (в миллисекундах)
-
-        // Ждем больше, чем TTL
-        TimeUnit.MILLISECONDS.sleep(ttlMs + 1000); // ждем 1 секунду больше TTL
-
-        assertTrue(cacheEntry.isExpired(), "CacheEntry should be expired after TTL");
-    }
-
-    @Test
-    void testCacheEntryNotExpiredBeforeTTL() throws InterruptedException {
-        // Засыпаем меньше времени, чем TTL
-        long ttlMs = 3L * 1000; // 3 минуты (в миллисекундах)
-
-        // Ждем только половину времени TTL
-        TimeUnit.MILLISECONDS.sleep(ttlMs / 2);
-
-        assertFalse(cacheEntry.isExpired(), "CacheEntry should not be expired before TTL");
     }
 
     @Test

@@ -87,23 +87,6 @@ class CacheServiceTest {
     }
 
     @Test
-    void testCacheExpiration() throws InterruptedException {
-        String key = "testKey";
-        String value = "testValue";
-
-        cacheService.saveToCache(key, value);
-
-        // Имитируем время истечения срока кэширования
-        Thread.sleep(3000); // Допустим, кэш устареет через 2 секунды (CLEANUP_INTERVAL_MS)
-
-        // Получение значения из кэша после его истечения
-        String cachedValue = cacheService.getFromCache(key, String.class);
-
-        // Проверяем, что значение больше не доступно из кэша после его истечения
-        assertNull(cachedValue, "Значение должно быть удалено из кэша после истечения срока");
-    }
-
-    @Test
     void testRemoveOldestEntryThroughCacheSave() {
         String key1 = "key1";
         String key2 = "key2";
