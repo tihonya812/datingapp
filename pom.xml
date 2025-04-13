@@ -31,7 +31,7 @@
         <sonar.projectKey>tihonya812_datingapp</sonar.projectKey>
         <sonar.organization>tihonya812</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>ec31caf304a52da75a69b3292d3d6dc45725e503</sonar.login>
+        <sonar.login>${env.SONAR_TOKEN}</sonar.login>
         <sonar.coverage.exclusions>
             **/aspects/**/*
             **/config/**,
