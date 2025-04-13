@@ -122,10 +122,11 @@ class CacheServiceTest {
         assertNotNull(cacheService.getFromCache(key2, String.class), "Новая запись должна остаться в кэше");
     }
 
-
     @Test
     void testPrintCache() {
-        // Проверка, что метод printCache не вызывает исключений
+        cacheService.saveToCache("testKey", "testValue");
         cacheService.printCache();
+
+        assertEquals(1, cacheService.getSize());
     }
 }

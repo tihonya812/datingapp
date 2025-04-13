@@ -9,7 +9,6 @@ import com.tihonya.datingapp.repository.InterestRepository;
 import com.tihonya.datingapp.repository.ProfileRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Transactional
@@ -98,7 +97,7 @@ public class InterestService {
                     interest.setName(dto.getName());
                     return interest;
                 })
-                .collect(Collectors.toList());
+                .toList();
 
         // Сохраняем все интересы сразу
         interestRepository.saveAll(interests);
@@ -106,8 +105,6 @@ public class InterestService {
         // Возвращаем созданные интересы
         return interests.stream()
                 .map(interestMapper::toDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 }
-
-

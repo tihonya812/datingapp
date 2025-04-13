@@ -56,28 +56,29 @@ class UserServiceTest {
     @Test
     void testGetUserById_whenUserExists_shouldReturnDto() {
         Long userId = 1L;
-        User user = new User();
-        user.setId(userId);
-        user.setUsername("john");
-        user.setEmail("john@example.com");
-        user.setPassword("hashed");
-        user.setRole(Role.USER);
+        User mockUser = new User();
+        mockUser.setId(userId);
+        mockUser.setUsername("john");
+        mockUser.setEmail("john@example.com");
+        mockUser.setPassword("hashed");
+        mockUser.setRole(Role.USER);
 
-        UserDto userDto = new UserDto();
-        userDto.setId(userId);
-        userDto.setUsername("john");
-        userDto.setEmail("john@example.com");
-        userDto.setRole("USER");
+        UserDto expectedDto = new UserDto();
+        expectedDto.setId(userId);
+        expectedDto.setUsername("john");
+        expectedDto.setEmail("john@example.com");
+        expectedDto.setRole("USER");
 
         when(cacheService.getFromCache("user_" + userId, UserDto.class)).thenReturn(null);
-        when(userRepository.findById(userId)).thenReturn(Optional.of(user));
-        when(userMapper.toDto(user)).thenReturn(userDto);
+        when(userRepository.findById(userId)).thenReturn(Optional.of(mockUser));
+        when(userMapper.toDto(mockUser)).thenReturn(expectedDto);
 
         UserDto result = userService.getUserById(userId);
 
         assertThat(result.getUsername()).isEqualTo("john");
-        verify(cacheService).saveToCache("user_" + userId, userDto);
+        verify(cacheService).saveToCache("user_" + userId, expectedDto);
     }
+
 
     @Test
     void testGetUserById_whenUserNotFound_shouldThrowException() {
