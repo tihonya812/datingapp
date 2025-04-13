@@ -883,3 +883,70 @@
 2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: key4
 2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: key1
 2025-04-13 16:28:14.817 INFO  [main] c.t.datingapp.service.CacheService - ✅ Данные взяты из кэша: key2
+2025-04-13 21:26:32.983 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-04-13 21:26:33.066 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Starting DatingAppApplication using Java 23.0.2 with PID 12000 (C:\Users\hp\IdeaProjects\datingapp\target\classes started by hp in C:\Users\hp\IdeaProjects\datingapp)
+2025-04-13 21:26:33.067 DEBUG [restartedMain] c.t.datingapp.DatingAppApplication - Running with Spring Boot v3.4.2, Spring v6.2.2
+2025-04-13 21:26:33.068 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-13 21:26:33.142 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-13 21:26:33.142 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-13 21:26:34.205 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-13 21:26:34.283 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 6 JPA repository interfaces.
+2025-04-13 21:26:35.080 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-13 21:26:35.095 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:26:35.096 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-13 21:26:35.097 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-04-13 21:26:35.149 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-13 21:26:35.149 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2007 ms
+2025-04-13 21:26:35.359 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-13 21:26:35.446 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-04-13 21:26:35.498 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-13 21:26:35.864 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-13 21:26:35.900 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-13 21:26:36.115 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5145b8ae
+2025-04-13 21:26:36.118 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-13 21:26:36.230 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-13 21:26:37.521 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-13 21:26:38.029 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:26:38.280 INFO  [restartedMain] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 21:26:38.280 INFO  [restartedMain] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 21:26:38.632 INFO  [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-13 21:26:39.937 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-13 21:26:39.965 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-13 21:26:39.981 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-13 21:26:39.994 INFO  [restartedMain] c.t.datingapp.DatingAppApplication - Started DatingAppApplication in 7.45 seconds (process running for 9.101)
+2025-04-13 21:26:39.997 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 21:26:39.998 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 21:27:03.875 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-13 21:27:03.876 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-13 21:27:03.881 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-04-13 21:27:03.963 INFO  [http-nio-8080-exec-1] c.t.datingapp.aspects.LoggingAspect - [GET] /users - List com.tihonya.datingapp.controller.UserController.getAllUsers()
+2025-04-13 21:27:10.002 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 21:27:10.003 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 21:27:13.799 INFO  [http-nio-8080-exec-2] c.t.datingapp.aspects.LoggingAspect - [GET] /users/1 - UserDto com.tihonya.datingapp.controller.UserController.getUserById(Long)
+2025-04-13 21:27:13.802 INFO  [http-nio-8080-exec-2] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: user_1
+2025-04-13 21:27:13.834 INFO  [http-nio-8080-exec-2] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: user_1
+2025-04-13 21:27:26.056 INFO  [http-nio-8080-exec-4] c.t.datingapp.aspects.LoggingAspect - [GET] /profiles/1 - ProfileDto com.tihonya.datingapp.controller.ProfileController.getProfileById(Long)
+2025-04-13 21:27:26.058 INFO  [http-nio-8080-exec-4] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: profile_1
+2025-04-13 21:27:26.070 INFO  [http-nio-8080-exec-4] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: profile_1
+2025-04-13 21:27:40.002 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🧹 Очистка устаревших записей из кэша
+2025-04-13 21:27:40.003 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 📌 Текущее состояние кэша:
+2025-04-13 21:27:40.003 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🔹 user_1 -> UserDto(id=1, username=Tixon, email=Lola@gmail.com, password=ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f, role=ADMIN, profile=ProfileDto(id=1, name=ффыв, age=22, city=Minsk, bio=I'am Тихоня, userId=1, photos=[], preferences=[], interests=[InterestDto(id=1, name=Sports), InterestDto(id=2, name=asdqweqwe)]))
+2025-04-13 21:27:40.021 INFO  [scheduling-1] c.t.datingapp.service.CacheService - 🔹 profile_1 -> ProfileDto(id=1, name=ффыв, age=22, city=Minsk, bio=I'am Тихоня, userId=1, photos=[], preferences=[], interests=[InterestDto(id=1, name=Sports), InterestDto(id=2, name=asdqweqwe)])
+2025-04-13 21:27:46.859 INFO  [http-nio-8080-exec-5] c.t.datingapp.aspects.LoggingAspect - [POST] /preferences - ResponseEntity com.tihonya.datingapp.controller.PreferenceController.createPreference(PreferenceDto)
+2025-04-13 21:27:46.862 INFO  [http-nio-8080-exec-5] c.t.datingapp.service.CacheService - 🗑️ Кэш очищен для ключа: all_preferences
+2025-04-13 21:27:51.089 INFO  [http-nio-8080-exec-8] c.t.datingapp.aspects.LoggingAspect - [GET] /preferences - ResponseEntity com.tihonya.datingapp.controller.PreferenceController.getAllPreferences()
+2025-04-13 21:27:54.389 INFO  [http-nio-8080-exec-7] c.t.datingapp.aspects.LoggingAspect - [GET] /preferences/1 - ResponseEntity com.tihonya.datingapp.controller.PreferenceController.getPreferenceById(Long)
+2025-04-13 21:27:54.390 INFO  [http-nio-8080-exec-7] c.t.datingapp.service.CacheService - ❌ Кэш не найден или устарел для ключа: preference_1
+2025-04-13 21:27:54.399 INFO  [http-nio-8080-exec-7] c.t.datingapp.service.CacheService - 💾 Данные сохранены в кэш: preference_1
+2025-04-13 21:27:59.894 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-13 21:27:59.910 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-04-13 21:27:59.923 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-13 21:27:59.936 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-13 21:27:59.947 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
