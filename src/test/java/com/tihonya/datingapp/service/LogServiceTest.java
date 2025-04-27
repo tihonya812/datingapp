@@ -2,11 +2,15 @@ package com.tihonya.datingapp.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -52,14 +56,28 @@ class LogServiceTest {
         assertTrue(exception.getMessage().contains("Файл ещё не готов"));
     }
 
-    private void waitForLogToBeReady(String id) throws InterruptedException {
-        int attempts = 30;
-        while (attempts-- > 0) {
-            if (logService.getStatus(id) == LogService.LogStatus.READY) {
-                return;
+    private void waitForLogToBeReady(String id) {
+        try (ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor()) {
+            final CountDownLatch latch = new CountDownLatch(1);
+
+            // Планируем задачу на периодическую проверку статуса
+            executorService.scheduleWithFixedDelay(() -> {
+                if (logService.getStatus(id) == LogService.LogStatus.READY) {
+                    latch.countDown(); // Лог готов, сигнализируем об этом
+                }
+            }, 0, 1, TimeUnit.SECONDS); // Проверка каждую секунду
+
+            // Ожидаем завершения или истечения таймаута
+            if (!latch.await(30, TimeUnit.SECONDS)) {
+                throw new TimeoutException("Лог не был готов в течение 30 секунд");
             }
-            Thread.sleep(1000); // Используем стандартный Thread.sleep
+        } catch (InterruptedException e) {
+            // Если поток был прерван, прерываем выполнение
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Ожидание было прервано", e);
+        } catch (TimeoutException e) {
+            // Если истекло время ожидания
+            throw new RuntimeException("Лог не был готов в течение 30 секунд", e);
         }
-        fail("Лог не был готов в течение 30 секунд");
     }
 }
