@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -59,7 +58,7 @@ class LogServiceTest {
             if (logService.getStatus(id) == LogService.LogStatus.READY) {
                 return;
             }
-            TimeUnit.SECONDS.sleep(1);
+            Thread.sleep(1000); // Используем стандартный Thread.sleep
         }
         fail("Лог не был готов в течение 30 секунд");
     }
