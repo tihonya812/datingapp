@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -32,30 +31,6 @@ public class LogService {
             log.error("Не удалось создать папку logs", e);
             throw new LogServiceInitializationException("Ошибка при инициализации LogService", e);
         }
-    }
-
-    public String generateLogAsync() {
-        String id = UUID.randomUUID().toString();
-        logStatusMap.put(id, LogStatus.IN_PROGRESS);
-
-        executor.execute(() -> {
-            try {
-                Thread.sleep(20_000); // Задержка 20 секунд
-                Path logPath = logsDirectory.resolve("log_" + id + ".txt");
-                Files.writeString(logPath, "Лог-файл сгенерирован: " + Instant.now());
-                logFiles.put(id, logPath);
-                logStatusMap.put(id, LogStatus.READY);
-            } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt(); // <-- корректная обработка InterruptedException
-                logStatusMap.put(id, LogStatus.FAILED);
-                log.error("Генерация лог-файла была прервана", ie);
-            } catch (IOException e) {
-                logStatusMap.put(id, LogStatus.FAILED);
-                log.error("Ошибка при генерации лог-файла", e);
-            }
-        });
-
-        return id;
     }
 
     public String generateLogForPeriodAsync(LocalDate startDate, LocalDate endDate) {

@@ -56,12 +56,6 @@ public class LogController {
         }
     }
 
-    @PostMapping("/generate")
-    public ResponseEntity<String> generateLog() {
-        String id = logService.generateLogAsync();
-        return ResponseEntity.ok(id);
-    }
-
     @GetMapping("/status/{id}")
     public ResponseEntity<String> getStatus(@PathVariable String id) {
         return ResponseEntity.ok(logService.getStatus(id).name());
