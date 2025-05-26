@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Logs", description = "API для работы с логами")
 public class LogController {
     private static final Logger LOG = LoggerFactory.getLogger(LogController.class);
-    private static final String INVALID_DATE_LOG_MESSAGE = "Неверный формат даты: {}";
+    private static final String INVALID_DATE_LOG_MESSAGE = "Log massage: {}";
     private static final String LOG_DIRECTORY = "logs"; // Папка с логами
     private final LogService logService;
 
