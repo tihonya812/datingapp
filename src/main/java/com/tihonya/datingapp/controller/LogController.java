@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Logs", description = "API для работы с логами")
 public class LogController {
     private static final Logger LOG = LoggerFactory.getLogger(LogController.class);
+    private static final String INVALID_DATE_LOG_MESSAGE = "Неверный формат даты: {}";
     private static final String LOG_DIRECTORY = "logs"; // Папка с логами
     private final LogService logService;
 
@@ -55,7 +56,7 @@ public class LogController {
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
                     .body(resource);
         } catch (MalformedURLException e) {
-            LOG.warn("Неверный формат даты: {}", e.getMessage());
+            LOG.warn(INVALID_DATE_LOG_MESSAGE, e.getMessage());
             return ResponseEntity.internalServerError().build();
         }
     }
@@ -73,11 +74,11 @@ public class LogController {
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"log_" + id + ".txt\"")
                     .body(content);
         } catch (LogNotFoundException e) {
-            LOG.warn("Неверный формат даты: {}", e.getMessage());
+            LOG.warn(INVALID_DATE_LOG_MESSAGE, e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(null);
         } catch (Exception e) {
-            LOG.warn("Неверный формат даты: {}", e.getMessage());
+            LOG.warn(INVALID_DATE_LOG_MESSAGE, e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
@@ -93,7 +94,7 @@ public class LogController {
             String id = logService.generateLogForPeriodAsync(start, end);
             return ResponseEntity.ok(id);
         } catch (DateTimeParseException e) {
-            LOG.warn("Неверный формат даты: {}", e.getMessage());
+            LOG.warn(INVALID_DATE_LOG_MESSAGE, e.getMessage());
             return ResponseEntity.badRequest().body("Неверный формат даты. Используйте yyyy-MM-dd");
         }
     }
