@@ -51,7 +51,8 @@ public class LogController {
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
                     .body(resource);
-        } catch (MalformedURLException ignored) {
+        } catch (MalformedURLException e) {
+            // Ошибка парсинга допустима, возвращаем ошибку без логирования
             return ResponseEntity.internalServerError().build();
         }
     }
@@ -68,10 +69,12 @@ public class LogController {
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"log_" + id + ".txt\"")
                     .body(content);
-        } catch (LogNotFoundException ignored) {
+        } catch (LogNotFoundException e) {
+            // Ошибка парсинга допустима, возвращаем ошибку без логирования
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(null);
-        } catch (Exception ignored) {
+        } catch (Exception e) {
+            // Ошибка парсинга допустима, возвращаем ошибку без логирования
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
@@ -86,7 +89,8 @@ public class LogController {
 
             String id = logService.generateLogForPeriodAsync(start, end);
             return ResponseEntity.ok(id);
-        } catch (DateTimeParseException ignored) {
+        } catch (DateTimeParseException e) {
+            // Ошибка парсинга допустима, возвращаем ошибку без логирования
             return ResponseEntity.badRequest().body("Неверный формат даты. Используйте yyyy-MM-dd");
         }
     }
