@@ -11,6 +11,8 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -29,6 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Tag(name = "Logs", description = "API для работы с логами")
 public class LogController {
+    private static final Logger LOG = LoggerFactory.getLogger(LogController.class);
     private static final String LOG_DIRECTORY = "logs"; // Папка с логами
     private final LogService logService;
 
@@ -52,7 +55,7 @@ public class LogController {
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
                     .body(resource);
         } catch (MalformedURLException e) {
-            // Ошибка парсинга допустима, возвращаем ошибку без логирования
+            LOG.warn("Неверный формат даты: {}", e.getMessage());
             return ResponseEntity.internalServerError().build();
         }
     }
@@ -70,11 +73,11 @@ public class LogController {
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"log_" + id + ".txt\"")
                     .body(content);
         } catch (LogNotFoundException e) {
-            // Ошибка парсинга допустима, возвращаем ошибку без логирования
+            LOG.warn("Неверный формат даты: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(null);
         } catch (Exception e) {
-            // Ошибка парсинга допустима, возвращаем ошибку без логирования
+            LOG.warn("Неверный формат даты: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
@@ -90,7 +93,7 @@ public class LogController {
             String id = logService.generateLogForPeriodAsync(start, end);
             return ResponseEntity.ok(id);
         } catch (DateTimeParseException e) {
-            // Ошибка парсинга допустима, возвращаем ошибку без логирования
+            LOG.warn("Неверный формат даты: {}", e.getMessage());
             return ResponseEntity.badRequest().body("Неверный формат даты. Используйте yyyy-MM-dd");
         }
     }
