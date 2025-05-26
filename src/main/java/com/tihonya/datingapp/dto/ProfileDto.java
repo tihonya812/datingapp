@@ -14,7 +14,7 @@ public class ProfileDto {
     @NotBlank (message = "Имя не может быть пустым")
     private String name;
 
-    @Min(value = 13, message = "Минимальный возраст - 13 лет")
+    @Min(value = 18, message = "Минимальный возраст - 18 лет")
     @Max(value = 99, message = "Максимальный возраст - 99 лет")
     private int age;
 
@@ -26,7 +26,6 @@ public class ProfileDto {
     private Long userId;
     private List<PhotoDto> photos;
     private List<PreferenceDto> preferences;
-
     private List<InterestDto> interests;
 }
 

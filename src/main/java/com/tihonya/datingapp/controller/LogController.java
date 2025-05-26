@@ -69,7 +69,9 @@ public class LogController {
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"log_" + id + ".txt\"")
                     .body(content);
         } catch (LogNotFoundException e) {
-            throw new LogNotFoundException("Лог с ID " + id + " не найден");
+            //            throw new LogNotFoundException("Лог с ID " + id + " не найден");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(null);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }

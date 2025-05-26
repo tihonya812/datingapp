@@ -32,7 +32,7 @@ public class ProfileMapper {
         dto.setAge(profile.getAge());
         dto.setCity(profile.getCity());
         dto.setBio(profile.getBio());
-        dto.setUserId(profile.getUser().getId()); // Добавляем связь с User
+        dto.setUserId(profile.getUser() != null ? profile.getUser().getId() : null);
 
         // Интересы
         List<InterestDto> interestDtos = profile.getInterests().stream()

@@ -1,7 +1,7 @@
 package com.tihonya.datingapp.service;
 
+import com.tihonya.datingapp.exception.LogNotFoundException;
 import com.tihonya.datingapp.exception.LogServiceInitializationException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +22,7 @@ public class LogService {
     private final Map<String, LogStatus> logStatusMap = new ConcurrentHashMap<>();
     private final Map<String, Path> logFiles = new ConcurrentHashMap<>();
     private final Executor executor = Executors.newCachedThreadPool();
-    private final Path logsDirectory = Paths.get("logs"); // <-- путь к logs в корне проекта
+    private final Path logsDirectory = Paths.get("logs");
 
     public LogService() {
         try {
@@ -39,7 +39,7 @@ public class LogService {
 
         executor.execute(() -> {
             try {
-                Thread.sleep(20_000); // Задержка 20 секунд
+                Thread.sleep(20_000);
                 StringBuilder collectedLogs = new StringBuilder();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -66,7 +66,7 @@ public class LogService {
                 logFiles.put(id, mergedLog);
                 logStatusMap.put(id, LogStatus.READY);
             } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt(); // <-- корректная обработка InterruptedException
+                Thread.currentThread().interrupt();
                 logStatusMap.put(id, LogStatus.FAILED);
                 log.error("Генерация периодического лог-файла была прервана", ie);
             } catch (IOException e) {
@@ -78,15 +78,19 @@ public class LogService {
         return id;
     }
 
-    public LogStatus getStatus(String id) {
-        return logStatusMap.getOrDefault(id, LogStatus.NOT_FOUND);
+    public byte[] getLogFile(String id) {
+        if (logStatusMap.get(id) == LogStatus.READY) {
+            try {
+                return Files.readAllBytes(logFiles.get(id));
+            } catch (IOException e) {
+                throw new RuntimeException("Ошибка чтения файла лога", e);
+            }
+        }
+        throw new LogNotFoundException("Файл ещё не готов или не существует");
     }
 
-    public byte[] getLogFile(String id) throws IOException {
-        if (logStatusMap.get(id) == LogStatus.READY) {
-            return Files.readAllBytes(logFiles.get(id));
-        }
-        throw new FileNotFoundException("Файл ещё не готов или не существует");
+    public LogStatus getStatus(String id) {
+        return logStatusMap.getOrDefault(id, LogStatus.NOT_FOUND);
     }
 
     public enum LogStatus {

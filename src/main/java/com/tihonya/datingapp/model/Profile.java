@@ -1,5 +1,6 @@
 package com.tihonya.datingapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,12 +45,19 @@ public class Profile {
     @OneToMany(mappedBy = "profile", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Preference> preferences = new ArrayList<>();
 
+    @OneToMany(mappedBy = "liker", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Like> likesGiven = new ArrayList<>();
+
+    @OneToMany(mappedBy = "liked", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Like> likesReceived = new ArrayList<>();
+
     @ManyToMany
     @JoinTable(
             name = "profile_interest",
             joinColumns = @JoinColumn(name = "profile_id"),
             inverseJoinColumns = @JoinColumn(name = "interest_id")
     )
+    @JsonIgnore // Игнорируем interests при сериализации
     private List<Interest> interests = new ArrayList<>();
 }
 

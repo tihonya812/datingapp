@@ -1,15 +1,20 @@
 package com.tihonya.datingapp.service;
 
+import com.tihonya.datingapp.dto.PhotoDto;
+import com.tihonya.datingapp.dto.PreferenceDto;
+import com.tihonya.datingapp.dto.ProfileDto;
 import com.tihonya.datingapp.dto.UserDto;
 import com.tihonya.datingapp.enums.Role;
 import com.tihonya.datingapp.exception.NotFoundException;
 import com.tihonya.datingapp.mapper.UserMapper;
+import com.tihonya.datingapp.model.Profile;
 import com.tihonya.datingapp.model.User;
 import com.tihonya.datingapp.repository.UserRepository;
-import com.tihonya.datingapp.util.HashUtil;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +26,8 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final CacheService cacheService;
+    private final PasswordEncoder passwordEncoder;
+    private final ProfileService profileService;
 
     @Transactional
     public List<UserDto> getAllUsers() {
@@ -60,7 +67,7 @@ public class UserService {
         User user = new User();
         user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
-        user.setPassword(HashUtil.hashPassword(userDto.getPassword())); // Хешируем пароль
+        user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         user.setRole(Role.valueOf(userDto.getRole())); // Преобразуем строку в Enum
         clearUserCache();
         return userMapper.toDto(userRepository.save(user));
@@ -86,8 +93,7 @@ public class UserService {
         user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
         if (userDto.getPassword() != null && !userDto.getPassword().isEmpty()) {
-            user.setPassword(HashUtil.hashPassword(userDto.getPassword()));
-            // Хешируем только если передан новый пароль
+            user.setPassword(passwordEncoder.encode(userDto.getPassword()));
         }
 
         user.setRole(Role.valueOf(userDto.getRole())); // Обновляем роль
@@ -97,11 +103,62 @@ public class UserService {
 
     @Transactional
     public void deleteUser(Long id) {
-        if (!userRepository.existsById(id)) {
-            throw new NotFoundException(USER_NOT_FOUND);
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException(USER_NOT_FOUND));
+
+        // Удаляем профиль, если он существует
+        Profile profile = user.getProfile();
+        if (profile != null) {
+            profileService.deleteProfile(profile.getId());
         }
+
         userRepository.deleteById(id);
         clearUserCache();
     }
-}
 
+    @Transactional
+    public UserDto register(UserDto userDto) {
+        return createUser(userDto);
+    }
+
+    @Transactional
+    public UserDto findByEmail(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new NotFoundException("User not found with email: " + email));
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setUsername(user.getUsername());
+        userDto.setEmail(user.getEmail());
+        userDto.setRole(user.getRole().name());
+        Profile profile = user.getProfile();
+        if (profile != null) {
+            ProfileDto profileDto = new ProfileDto();
+            profileDto.setId(profile.getId());
+            profileDto.setName(profile.getName());
+            profileDto.setAge(profile.getAge());
+            profileDto.setCity(profile.getCity());
+            profileDto.setBio(profile.getBio());
+            profileDto.setUserId(profile.getUser() != null ? profile.getUser().getId() : null);
+            profileDto.setPhotos(profile.getPhotos().stream()
+                    .map(p -> {
+                        PhotoDto photoDto = new PhotoDto();
+                        photoDto.setId(p.getId());
+                        photoDto.setUrl(p.getUrl());
+                        return photoDto;
+                    })
+                    .collect(Collectors.toList()));
+            profileDto.setPreferences(profile.getPreferences().stream()
+                    .map(p -> {
+                        PreferenceDto preferenceDto = new PreferenceDto();
+                        preferenceDto.setId(p.getId());
+                        preferenceDto.setCategory(p.getCategory());
+                        preferenceDto.setValue(p.getValue());
+                        return preferenceDto;
+                    })
+                    .collect(Collectors.toList()));
+            profileDto.setInterests(null); // Избегаем маппинга interests
+            userDto.setProfile(profileDto);
+        }
+        return userDto;
+    }
+}

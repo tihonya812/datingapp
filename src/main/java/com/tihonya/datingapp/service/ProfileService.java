@@ -13,12 +13,13 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class ProfileService {
-    private static final String USER_NOT_FOUND = "User not found";
     private static final String INTEREST_NOT_FOUND = "Interest not found";
     private static final String PROFILE_NOT_FOUND = "Profile not found";
     private static final String CACHE_KEY_PROFILES = "all_profiles";
@@ -65,12 +66,19 @@ public class ProfileService {
     }
 
     @Transactional
-    public ProfileDto createProfile(ProfileDto profileDto) {
-        // Проверяем, есть ли уже профиль для этого пользователя
-        Optional<Profile> existingProfile = profileRepository.findByUserId(profileDto.getUserId());
+    public ProfileDto getProfileByUserId(Long userId) {
+        Profile profile = profileRepository.findByUserId(userId)
+                .orElseThrow(() -> new NotFoundException("Profile not found for user ID: " + userId));
+        return profileMapper.toDto(profile);
+    }
 
-        if (existingProfile.isPresent()) {
-            throw new IllegalArgumentException("Профиль для этого пользователя уже существует.");
+    @Transactional
+    public ProfileDto createProfile(ProfileDto profileDto) {
+        if (profileDto.getUserId() != null) {
+            Optional<Profile> existingProfile = profileRepository.findByUserId(profileDto.getUserId());
+            if (existingProfile.isPresent()) {
+                throw new IllegalArgumentException("Профиль для этого пользователя уже существует.");
+            }
         }
         Profile profile = new Profile();
         profile.setName(profileDto.getName());
@@ -78,11 +86,20 @@ public class ProfileService {
         profile.setCity(profileDto.getCity());
         profile.setBio(profileDto.getBio());
 
-        User user = userRepository.findById(profileDto.getUserId())
-                .orElseThrow(() -> new NotFoundException(USER_NOT_FOUND));
-        profile.setUser(user);
+        if (profileDto.getUserId() != null) {
+            User user = userRepository.findById(profileDto.getUserId())
+                    .orElseThrow(() -> new NotFoundException("USER_NOT_FOUND"));
+            profile.setUser(user);
+            System.out.println("Привязан пользователь с ID: " + profileDto.getUserId());
+        } else {
+            profile.setUser(null);
+        }
+
         clearProfileCache();
-        return profileMapper.toDto(profileRepository.save(profile));
+        Profile savedProfile = profileRepository.save(profile);
+        ProfileDto result = profileMapper.toDto(savedProfile);
+        System.out.println("Возвращаемый ProfileDto: " + result);
+        return result;
     }
 
     @Transactional
@@ -103,6 +120,13 @@ public class ProfileService {
     public void deleteProfile(Long id) {
         Profile profile = profileRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
+        // Разрываем связь с пользователем
+        User user = profile.getUser();
+        if (user != null) {
+            user.setProfile(null);
+            userRepository.save(user);
+        }
+        profile.setUser(null);
         profileRepository.delete(profile);
         clearProfileCache();    // Очистка всего кэша профилей (так как один удалён)
         clearProfileCache(id);  // Очистка конкретного кэша профиля (перестраховка)
@@ -124,5 +148,16 @@ public class ProfileService {
         clearProfileCache();
         return profileMapper.toDto(profile);
     }
+
+    @Transactional
+    public Long getProfileIdByUserId(Long userId) {
+        Logger logger = LoggerFactory.getLogger(ProfileService.class);
+        Profile profile = profileRepository.findByUserId(userId)
+                .orElse(null); // Возвращаем null, если профиль не найден
+        Long profileId = profile != null ? profile.getId() : null;
+        logger.info("Fetching profileId for userId: {}, result: {}", userId, profileId);
+        return profile != null ? profile.getId() : null;
+    }
 }
+
 

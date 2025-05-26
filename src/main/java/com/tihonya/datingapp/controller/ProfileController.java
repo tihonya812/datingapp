@@ -102,4 +102,9 @@ public class ProfileController {
             @PathVariable Long interestsId) {
         return profileService.addInterestToProfile(profileId, interestsId);
     }
+
+    @GetMapping("/user/{userId}")
+    public ProfileDto getProfileByUserId(@PathVariable Long userId) {
+        return profileService.getProfileByUserId(userId);
+    }
 }

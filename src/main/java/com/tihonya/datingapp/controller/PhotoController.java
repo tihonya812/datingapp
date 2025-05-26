@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/photos")
@@ -25,15 +26,12 @@ public class PhotoController {
         this.photoService = photoService;
     }
 
-    @Operation(summary = "Добавить фото профилю",
-            description = "Добавляет фото по URL для указанного профиля")
+    @Operation(summary = "Добавить фото профилю", description = "Добавляет фото для указанного профиля")
     @PostMapping("/{profileId}")
     public ResponseEntity<PhotoDto> addPhoto(
-            @Parameter(description = "Идентификатор профиля")
-            @PathVariable Long profileId,
-            @Parameter(description = "Данные фотки")
-            @RequestParam String url) {
-        PhotoDto photo = photoService.addPhoto(profileId, url);
+            @Parameter(description = "Идентификатор профиля") @PathVariable Long profileId,
+            @Parameter(description = "Файл фото") @RequestParam("file") MultipartFile file) {
+        PhotoDto photo = photoService.addPhoto(profileId, file);
         return ResponseEntity.ok(photo);
     }
 
