@@ -51,7 +51,7 @@ public class MessageService {
         if (userId == null) {
             throw new IllegalArgumentException("User ID must not be null");
         }
-        User user = userRepository.findById(userId)
+        userRepository.findById(userId)
                 .orElseThrow(() -> new NotFoundException("User not found with ID: " + userId));
         List<Message> messages = messageRepository.findBySenderIdOrReceiverId(userId, userId);
         return messageMapper.toDtoList(messages);

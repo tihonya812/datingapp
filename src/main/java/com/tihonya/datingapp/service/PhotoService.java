@@ -2,6 +2,8 @@ package com.tihonya.datingapp.service;
 
 import com.tihonya.datingapp.dto.PhotoDto;
 import com.tihonya.datingapp.exception.NotFoundException;
+import com.tihonya.datingapp.exception.PhotoDeletionException;
+import com.tihonya.datingapp.exception.PhotoStorageException;
 import com.tihonya.datingapp.mapper.PhotoMapper;
 import com.tihonya.datingapp.model.Photo;
 import com.tihonya.datingapp.model.Profile;
@@ -50,7 +52,7 @@ public class PhotoService {
             Files.copy(file.getInputStream(), uploadPath.resolve(fileName),
                     StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка при сохранении файла: " + e.getMessage());
+            throw new PhotoStorageException("Ошибка при сохранении файла: ", e);
         }
 
         // Генерация URL
@@ -98,7 +100,7 @@ public class PhotoService {
         try {
             Files.deleteIfExists(path);
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка при удалении файла: " + e.getMessage());
+            throw new PhotoDeletionException("Ошибка при удалении файла: ", e);
         }
 
         photoRepository.delete(photo);

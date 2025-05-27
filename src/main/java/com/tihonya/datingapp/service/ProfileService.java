@@ -23,6 +23,7 @@ public class ProfileService {
     private static final String INTEREST_NOT_FOUND = "Interest not found";
     private static final String PROFILE_NOT_FOUND = "Profile not found";
     private static final String CACHE_KEY_PROFILES = "all_profiles";
+    private static final Logger LOG = LoggerFactory.getLogger(ProfileService.class);
 
     private final ProfileRepository profileRepository;
     private final InterestRepository interestRepository;
@@ -89,7 +90,7 @@ public class ProfileService {
             User user = userRepository.findById(profileDto.getUserId())
                     .orElseThrow(() -> new NotFoundException("USER_NOT_FOUND"));
             profile.setUser(user);
-            System.out.println("Привязан пользователь с ID: " + profileDto.getUserId());
+            LOG.info("Привязан пользователь с ID: {}", profileDto.getUserId());
         } else {
             profile.setUser(null);
         }
@@ -97,7 +98,7 @@ public class ProfileService {
         clearProfileCache();
         Profile savedProfile = profileRepository.save(profile);
         ProfileDto result = profileMapper.toDto(savedProfile);
-        System.out.println("Возвращаемый ProfileDto: " + result);
+        LOG.info("Возвращаемый ProfileDto: {}", result);
         return result;
     }
 
