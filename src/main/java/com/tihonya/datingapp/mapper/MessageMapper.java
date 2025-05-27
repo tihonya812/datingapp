@@ -3,7 +3,6 @@ package com.tihonya.datingapp.mapper;
 import com.tihonya.datingapp.dto.MessageDto;
 import com.tihonya.datingapp.model.Message;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,6 +18,6 @@ public class MessageMapper {
     }
 
     public List<MessageDto> toDtoList(List<Message> messages) {
-        return messages.stream().map(this::toDto).collect(Collectors.toList());
+        return messages.stream().map(this::toDto).toList();
     }
 }

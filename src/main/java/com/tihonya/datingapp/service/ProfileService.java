@@ -56,7 +56,6 @@ public class ProfileService {
         // Если нет, загружаем из БД
         Profile profile = profileRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException(PROFILE_NOT_FOUND));
-
         ProfileDto profileDto = profileMapper.toDto(profile);
 
         // Сохраняем в кэш
