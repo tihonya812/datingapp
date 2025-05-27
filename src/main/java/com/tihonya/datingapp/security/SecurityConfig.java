@@ -19,6 +19,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebSecurity
 public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private static final String ROLE_ADMIN = "ADMIN";
+    private static final String ROLE_USER = "USER";
 
     public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
@@ -45,9 +47,9 @@ public class SecurityConfig {
                         .requestMatchers("/uploads/**").permitAll() // Разрешаем доступ к uploads
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/profiles/**").hasAnyRole(
-                                "ADMIN", "USER") // Только авторизованные пользователи
-                        .requestMatchers("/admin/**").hasRole("ADMIN") // Только для админов
-                        .requestMatchers(HttpMethod.POST, "/profiles").hasAnyRole("USER", "ADMIN")
+                                ROLE_ADMIN, ROLE_USER) // Только авторизованные пользователи
+                        .requestMatchers("/admin/**").hasRole(ROLE_ADMIN) // Только для админов
+                        .requestMatchers(HttpMethod.POST, "/profiles").hasAnyRole(ROLE_USER, ROLE_ADMIN)
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

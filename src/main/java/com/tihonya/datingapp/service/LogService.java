@@ -1,6 +1,7 @@
 package com.tihonya.datingapp.service;
 
 import com.tihonya.datingapp.exception.LogNotFoundException;
+import com.tihonya.datingapp.exception.LogReadException;
 import com.tihonya.datingapp.exception.LogServiceInitializationException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -83,7 +84,7 @@ public class LogService {
             try {
                 return Files.readAllBytes(logFiles.get(id));
             } catch (IOException e) {
-                throw new RuntimeException("Ошибка чтения файла лога", e);
+                throw new LogReadException("Ошибка чтения файла лога", e);
             }
         }
         throw new LogNotFoundException("Файл ещё не готов или не существует");
